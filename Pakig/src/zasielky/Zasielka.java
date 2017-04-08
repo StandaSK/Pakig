@@ -6,7 +6,7 @@ package zasielky;
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>
  *
  */
-public interface Dorucitelny {
+public interface Zasielka {
 	public void nastavCiel(String ciel);
 	public String zistiCiel();
 	public void nastavHmotnost(double hmotnost);

@@ -5,7 +5,7 @@ package zasielky;
  * @author Stano
  *
  */
-public class Balik implements Dorucitelny {
+public class Balik implements Zasielka {
 	private String ciel;
 	private double hmotnost;
 

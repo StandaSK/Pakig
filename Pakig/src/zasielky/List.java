@@ -5,7 +5,7 @@ package zasielky;
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>
  *
  */
-public class List implements Dorucitelny {
+public class List implements Zasielka {
 	private String ciel;
 	private double hmotnost;
 

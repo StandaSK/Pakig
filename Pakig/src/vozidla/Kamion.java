@@ -14,9 +14,11 @@ public class Kamion extends Vozidlo {
 		super("Kamion", 100, 10, 10);
 	}
 
+	/*
 	public Kamion(String nazov) {
 		super(nazov, 100, 10, 10);
 	}
+	*/
 
 	/*
 	public Kamion(int kapacita, int rychlost, int cenaPrepravy) {

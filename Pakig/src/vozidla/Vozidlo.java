@@ -1,5 +1,8 @@
 package vozidla;
 
+import java.util.ArrayList;
+import zasielky.Zasielka;
+
 /**
  * Abstraktna trieda Vozidlo sa vyuziva ako
  * spolocny nadtyp vsetkych vozidiel.
@@ -11,12 +14,22 @@ public abstract class Vozidlo {
 	private int kapacita;
 	private int rychlost;
 	private int cenaPrepravy;
+	private ArrayList<Zasielka> zasielky;
 
 	public Vozidlo(String nazovVozidla, int kapacita, int rychlost, int cenaPrepravy) {
 		this.nazovVozidla = nazovVozidla;
 		this.kapacita = kapacita;
 		this.rychlost = rychlost;
 		this.cenaPrepravy = cenaPrepravy;
+		this.zasielky = new ArrayList<Zasielka>();
+	}
+
+	public void pridajZasielku(Zasielka zasielka) {
+		this.zasielky.add(zasielka);
+	}
+
+	public void odoberZasielky() {
+		this.zasielky.clear();
 	}
 
 	/**
@@ -48,6 +61,13 @@ public abstract class Vozidlo {
 	}
 
 	/**
+	 * @return ArrayList zasielok
+	 */
+	public ArrayList<Zasielka> getZasielky() {
+		return zasielky;
+	}
+
+	/**
 	 * @param nazovVozidla the nazovVozidla to set
 	 */
 	public void setNazovVozidla(String nazovVozidla) {
@@ -73,6 +93,13 @@ public abstract class Vozidlo {
 	 */
 	public void setCenaPrepravy(int cenaPrepravy) {
 		this.cenaPrepravy = cenaPrepravy;
+	}
+
+	/**
+	 * @param zasielky ArrayList zasielok
+	 */
+	public void setZasielky(ArrayList<Zasielka> zasielky) {
+		this.zasielky = zasielky;
 	}
 
 }

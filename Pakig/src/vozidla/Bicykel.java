@@ -13,9 +13,11 @@ public class Bicykel extends Vozidlo {
 		super("Bicykel", 5, 10, 10);
 	}
 
+	/*
 	public Bicykel(String nazov) {
 		super(nazov, 5, 10 ,10);
 	}
+	*/
 
 	/*
 	public Bicykel(String nazovVozidla, int kapacita, int rychlost, int cenaPrepravy) {

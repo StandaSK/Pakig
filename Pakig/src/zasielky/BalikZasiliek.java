@@ -7,10 +7,10 @@ import java.util.*;
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>
  *
  */
-public class BalikZasiliek implements Dorucitelny {
+public class BalikZasiliek implements Zasielka {
 	private double hmotnost;
 	private String ciel;
-	private ArrayList<Dorucitelny> zoznam;
+	private ArrayList<Zasielka> zoznam;
 	
 	/*
 	public BalikZasiliek() {
@@ -21,25 +21,25 @@ public class BalikZasiliek implements Dorucitelny {
 	*/
 	
 	public BalikZasiliek(String ciel) {
-		this.hmotnost = 0.1;
-		this.ciel = ciel;
-		this.zoznam = new ArrayList<Dorucitelny>();
+		this.nastavHmotnost(0.1);
+		this.nastavCiel(ciel);
+		this.zoznam = new ArrayList<Zasielka>();
 	}
 	
 	public BalikZasiliek(float hmotnost, String ciel) {
-		this.hmotnost = hmotnost;
-		this.ciel = ciel;
-		this.zoznam = new ArrayList<Dorucitelny>();
+		this.nastavHmotnost(hmotnost);
+		this.nastavCiel(ciel);
+		this.zoznam = new ArrayList<Zasielka>();
 	}
 	
-	public void pridajList(List list) {
-		zoznam.add(list);
-		hmotnost += list.zistiHmotnost();
+	public void pridajZasielku(Zasielka zasielka) {
+		zoznam.add(zasielka);
+		hmotnost += zasielka.zistiHmotnost();
 	}
 	
-	public void odoberList(List list) {
-		zoznam.remove(list);
-		hmotnost -= list.zistiHmotnost();
+	public void odoberZasielku(Zasielka zasielka) {
+		zoznam.remove(zasielka);
+		hmotnost -= zasielka.zistiHmotnost();
 	}
 
 	@Override

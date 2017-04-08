@@ -3,19 +3,20 @@ package budovy;
 import java.util.*;
 
 import vozidla.Vozidlo;
-import zasielky.Dorucitelny;
+import zasielky.Zasielka;
 
 public class Sklad implements Budova {
+	private String nazov;
 	private ArrayList<Vozidlo> vozidla;
+	private ArrayList<Zasielka> zasielky;
 	
 	public Sklad() {
-		// TODO Auto-generated constructor stub
+		this.vozidla = new ArrayList<Vozidlo>();
 	}
 
 	@Override
-	public void prijmiZasielky(List<Dorucitelny> zasielky) {
-		// TODO Auto-generated method stub
-
+	public void prijmiZasielky(List<Zasielka> zasielky) {
+		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));
 	}
 
 	@Override
@@ -27,5 +28,15 @@ public class Sklad implements Budova {
 	public void odoberVozidlo(Vozidlo vozidlo) {
 		this.vozidla.remove(vozidlo);
 	}
-	
+
+	@Override
+	public void setNazov(String nazov) {
+		this.nazov = nazov;
+	}
+
+	@Override
+	public String getNazov() {
+		return nazov;
+	}
+
 }

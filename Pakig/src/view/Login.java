@@ -1,12 +1,13 @@
 package view;
 
+import java.util.*;
+
 import javafx.application.Application;
 import javafx.event.*;
 import javafx.geometry.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import javafx.scene.paint.*;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 
@@ -55,18 +56,25 @@ public class Login extends Application {
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
         
-        final Text actiontarget = new Text();
-        grid.add(actiontarget, 1, 6);
-        
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
+            	primaryStage.hide();
+                
+            	List<String> choices = new ArrayList<>();
+            	choices.add("Poboèka");
+            	choices.add("Sklad");
+
+            	ChoiceDialog<String> dialog = new ChoiceDialog<>("Poboèka", choices);
+            	dialog.setTitle("Výber pracoviska - Pakig");
+            	dialog.setHeaderText("Prihlásenie úspešné!");
+            	dialog.setContentText("Vyberte typ pracoviska:");
             	
-                actiontarget.setFill(Color.GREEN);
-                actiontarget.setText("Prihlásenie úspešné!");
+            	Optional<String> result = dialog.showAndWait();
+            	result.ifPresent(letter -> System.out.println("Vaša vo¾ba: " + letter));
                 
                 Stage stage = new Stage();
-                stage.setTitle("My New Stage Title");
+                stage.setTitle("Nové okno - Pakig");
                 stage.setScene(new Scene(new GridPane(), 450, 450));
                 stage.show();
             }
