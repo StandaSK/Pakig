@@ -10,8 +10,10 @@ public class Sklad implements Budova {
 	private ArrayList<Vozidlo> vozidla;
 	private ArrayList<Zasielka> zasielky;
 	
-	public Sklad() {
+	public Sklad(String nazov) {
+		this.setNazov(nazov);
 		this.vozidla = new ArrayList<Vozidlo>();
+		this.zasielky = new ArrayList<Zasielka>();
 	}
 
 	@Override

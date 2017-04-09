@@ -9,8 +9,9 @@ public class Balik implements Zasielka {
 	private String ciel;
 	private double hmotnost;
 
-	public Balik() {
-		// TODO Auto-generated constructor stub
+	public Balik(float hmotnost, String ciel) {
+		this.nastavHmotnost(hmotnost);
+		this.nastavCiel(ciel);
 	}
 
 	@Override

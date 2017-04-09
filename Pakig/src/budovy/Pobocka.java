@@ -1,7 +1,6 @@
 package budovy;
 
 import java.util.*;
-
 import vozidla.Vozidlo;
 import zasielky.Zasielka;
 
@@ -10,8 +9,10 @@ public class Pobocka implements Budova {
 	private ArrayList<Vozidlo> vozidla;
 	private ArrayList<Zasielka> zasielky;
 
-	public Pobocka() {
+	public Pobocka(String nazov) {
+		this.setNazov(nazov);
 		this.vozidla = new ArrayList<Vozidlo>();
+		this.zasielky = new ArrayList<Zasielka>();
 	}
 
 	@Override

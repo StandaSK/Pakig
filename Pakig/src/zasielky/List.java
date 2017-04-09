@@ -9,8 +9,9 @@ public class List implements Zasielka {
 	private String ciel;
 	private double hmotnost;
 
-	public List() {
-		// TODO Auto-generated constructor stub
+	public List(float hmotnost, String ciel) {
+		this.nastavHmotnost(hmotnost);
+		this.nastavCiel(ciel);
 	}
 
 	@Override
