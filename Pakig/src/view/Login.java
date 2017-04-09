@@ -1,6 +1,7 @@
 package view;
 
 import controller.*;
+import budovy.*;
 import javafx.application.Application;
 import javafx.geometry.*;
 import javafx.scene.*;
@@ -10,6 +11,7 @@ import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 public class Login extends Application {
+	private ZoznamBudov zoznamBudov = new ZoznamBudov();
 
 	public static void main(String[] args) {
 		launch(args);
@@ -17,6 +19,7 @@ public class Login extends Application {
 
 	@Override
     public void start(Stage primaryStage) {
+		
         primaryStage.setTitle("Prihl·senie - Pakig");
 
         GridPane grid = new GridPane();
@@ -46,11 +49,12 @@ public class Login extends Application {
 
         Button btn = new Button("Prihl·siù");
         HBox hbBtn = new HBox(10);
+
         hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
 
-        btn.setOnAction(new LoginEventHandler());
+        btn.setOnAction(new LoginEventHandler(zoznamBudov));
 
         Scene scene = new Scene(grid, 300, 275);
         primaryStage.setScene(scene);
