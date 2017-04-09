@@ -24,7 +24,7 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
     	choices.add("Sklad");
 
     	ChoiceDialog<String> dialog = new ChoiceDialog<>("-- Vyberte --", choices);
-    	dialog.setTitle("Výber pracoviska - Pakig");
+    	dialog.setTitle("Výber typu pracoviska - Pakig");
     	dialog.setHeaderText("Prihlásenie úspešné!");
     	dialog.setContentText("Vyberte typ pracoviska:");
 
@@ -34,10 +34,10 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
     		
     		switch (letter) {
     		case "Poboèka" :
-    	        new PobockaView();
+    	        new PobockaView(zoznamBudov);
     			break;
     		case "Sklad" :
-    			new SkladView();
+    			new SkladView(zoznamBudov);
     			break;
     		default :
     			Alert alert = new Alert(AlertType.ERROR);

@@ -18,5 +18,12 @@ public class ZoznamBudov {
 	public void pridajSklad(String nazov) {
 		this.sklady.add(new Sklad(nazov));
 	}
-
+	
+	public ArrayList<Pobocka> getPobocky() {
+		return pobocky;
+	}
+	
+	public ArrayList<Sklad> getSklady() {
+		return sklady;
+	}
 }
