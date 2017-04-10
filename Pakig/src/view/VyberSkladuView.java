@@ -8,9 +8,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class SkladView extends Stage {
+public class VyberSkladuView extends Stage {
 
-	public SkladView(ZoznamBudov zoznamBudov) {
+	public VyberSkladuView(ZoznamBudov zoznamBudov) {
 		this.setTitle("Sklad - Pakig");
 
 		GridPane grid = new GridPane();
@@ -23,20 +23,22 @@ public class SkladView extends Stage {
         grid.add(vyberSkladu, 0, 0);
 
         ComboBox<String> sklady = new ComboBox<String>();
-        sklady.getItems().add("Trnava");
+        zoznamBudov.getSklady().forEach(sklad -> sklady.getItems().add(sklad.getNazov()));
+        //sklady.getItems().add("Trnava");
         sklady.setValue("-- Vyberte --");
         grid.add(sklady, 1, 0);
 
         Button potvrdVyber = new Button("OK");
         grid.add(potvrdVyber, 2, 0);
 
+        potvrdVyber.setOnAction(null);
+
         Button pridajSklad = new Button("Pridaj sklad");
         grid.add(pridajSklad, 3, 0);
-        
-        pridajSklad.setOnAction(new PridanieBudovyEventHandler(zoznamBudov, 1));
+
+        pridajSklad.setOnAction(new PridanieBudovyEventHandler(zoznamBudov, sklady, 1));
 
 		this.setScene(new Scene(grid, 500, 275));
-
 		this.show();
 	}
 

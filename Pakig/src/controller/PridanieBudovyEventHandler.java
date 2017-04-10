@@ -1,12 +1,15 @@
 package controller;
 
 import java.util.Optional;
+
 import budovy.ZoznamBudov;
 import javafx.event.*;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextInputDialog;
 
 public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 	private ZoznamBudov zoznamBudov;
+	private ComboBox<String> budovy;
 	private int typ;
 	
 	/**
@@ -14,8 +17,9 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 	 * @param zoznamBudov Zoznam všetkých budov
 	 * @param typ 0 pre vytvorenie poboèky, 1 pre vytvorenie skladu
 	 */
-	public PridanieBudovyEventHandler(ZoznamBudov zoznamBudov, int typ) {
+	public PridanieBudovyEventHandler(ZoznamBudov zoznamBudov, ComboBox<String> budovy, int typ) {
 		this.zoznamBudov = zoznamBudov;
+		this.budovy = budovy;
 		this.typ = typ;
 	}
 
@@ -49,6 +53,9 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 				zoznamBudov.pridajSklad(text);
 				break;
 			}
+			
+			// TODO Prerobit pridavanie do ComboBoxu cez Observer
+			budovy.getItems().add(text);
 		});
 	}
 

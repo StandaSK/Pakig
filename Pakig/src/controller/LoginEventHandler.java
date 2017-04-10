@@ -23,7 +23,8 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
     	choices.add("Poboèka");
     	choices.add("Sklad");
 
-    	ChoiceDialog<String> dialog = new ChoiceDialog<>("-- Vyberte --", choices);
+    	//ChoiceDialog<String> dialog = new ChoiceDialog<>("-- Vyberte --", choices);
+    	ChoiceDialog<String> dialog = new ChoiceDialog<>("Poboèka", choices);
     	dialog.setTitle("Výber typu pracoviska - Pakig");
     	dialog.setHeaderText("Prihlásenie úspešné!");
     	dialog.setContentText("Vyberte typ pracoviska:");
@@ -34,19 +35,21 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
     		
     		switch (letter) {
     		case "Poboèka" :
-    	        new PobockaView(zoznamBudov);
+    	        new VyberPobockyView(zoznamBudov);
     			break;
     		case "Sklad" :
-    			new SkladView(zoznamBudov);
+    			new VyberSkladuView(zoznamBudov);
     			break;
     		default :
     			Alert alert = new Alert(AlertType.ERROR);
     			alert.setTitle("Chyba! - Pakig");
     			alert.setHeaderText("Chyba!");
     			alert.setContentText("Nevybrali ste typ pracoviska!");
-
     			alert.showAndWait();
     			Platform.exit();
+    			
+    			// Riesenie pomocou vyhodenia vynimky
+    			//throw new IllegalStateException("Nevybrali ste správny typ pracoviska!");
     		}
     	});
 	}

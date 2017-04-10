@@ -8,9 +8,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class PobockaView extends Stage {
+public class VyberPobockyView extends Stage {
 
-	public PobockaView(ZoznamBudov zoznamBudov) {
+	public VyberPobockyView(ZoznamBudov zoznamBudov) {
 		this.setTitle("Poboèka - Pakig");
 
 		GridPane grid = new GridPane();
@@ -23,21 +23,21 @@ public class PobockaView extends Stage {
         grid.add(vyberPobocky, 0, 0);
 
         ComboBox<String> pobocky = new ComboBox<String>();
-        pobocky.getItems().add("Bratislava");
-        pobocky.getItems().add("Košice");
+        zoznamBudov.getPobocky().forEach(pobocka -> pobocky.getItems().add(pobocka.getNazov()));
         pobocky.setValue("-- Vyberte --");
         grid.add(pobocky, 1, 0);
 
         Button potvrdVyber = new Button("OK");
         grid.add(potvrdVyber, 2, 0);
 
+        potvrdVyber.setOnAction(null);
+
         Button pridajPobocku = new Button("Pridaj poboèku");
         grid.add(pridajPobocku, 3, 0);
-        
-        pridajPobocku.setOnAction(new PridanieBudovyEventHandler(zoznamBudov, 0));
+
+        pridajPobocku.setOnAction(new PridanieBudovyEventHandler(zoznamBudov, pobocky, 0));
 
 		this.setScene(new Scene(grid, 500, 150));
-
 		this.show();
 	}
 
