@@ -19,6 +19,10 @@ public class SkladView extends Stage {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
+        TextArea vypis = new TextArea();
+        vypis.setEditable(false);
+        grid.add(vypis, 1, 0, 2, 6);
+
         Button pridajVozidlo = new Button("Pridaj vozidlo");
         grid.add(pridajVozidlo, 0, 0);
 
@@ -29,10 +33,15 @@ public class SkladView extends Stage {
 
         odosliZasielky.setOnAction(new OtvorOdoslanieZasielokEventHandler(sklad, zoznamBudov));
 
-        TextArea vozidlaVypis = new TextArea();
-        sklad.getVozidla().forEach(vozidlo -> vozidlaVypis.appendText(vozidlo.getNazov() + "\n"));
-        vozidlaVypis.setEditable(false);
-        grid.add(vozidlaVypis, 1, 0, 2, 6);
+        Button vypisVozidla = new Button("Vypíš vozidlá");
+        grid.add(vypisVozidla, 0, 3);
+
+        vypisVozidla.setOnAction(new VypisVozidielEventHandler(sklad, vypis));
+
+        Button vypisZasielky = new Button("Vypíš zásielky");
+        grid.add(vypisZasielky, 0, 4);
+
+        vypisZasielky.setOnAction(new VypisZasielokEventHandler(sklad, vypis));
 
         Scene scene = new Scene(grid, 300, 250);
         this.setScene(scene);

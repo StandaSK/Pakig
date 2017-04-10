@@ -19,6 +19,10 @@ public class PobockaView extends Stage {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
+        TextArea vypis = new TextArea();
+        vypis.setEditable(false);
+        grid.add(vypis, 1, 0, 2, 6);
+
         Button pridajVozidlo = new Button("Pridaj vozidlo");
         grid.add(pridajVozidlo, 0, 0);
 
@@ -35,10 +39,15 @@ public class PobockaView extends Stage {
 
         odovzdajZasielku.setOnAction(new OdovzdajZasielkuEventHandler(pobocka));
 
-        TextArea vozidlaVypis = new TextArea();
-        pobocka.getVozidla().forEach(vozidlo -> vozidlaVypis.appendText(vozidlo.getNazov() + "\n"));
-        vozidlaVypis.setEditable(false);
-        grid.add(vozidlaVypis, 1, 0, 2, 6);
+        Button vypisVozidla = new Button("Vypíš vozidlá");
+        grid.add(vypisVozidla, 0, 3);
+
+        vypisVozidla.setOnAction(new VypisVozidielEventHandler(pobocka, vypis));
+
+        Button vypisZasielky = new Button("Vypíš zásielky");
+        grid.add(vypisZasielky, 0, 4);
+
+        vypisZasielky.setOnAction(new VypisZasielokEventHandler(pobocka, vypis));
 
         Scene scene = new Scene(grid, 300, 250);
         this.setScene(scene);

@@ -1,6 +1,11 @@
 package view;
 
+import java.util.ArrayList;
+
 import vozidla.*;
+import zasielky.Balik;
+import zasielky.List;
+import zasielky.Zasielka;
 import controller.*;
 import budovy.*;
 import javafx.application.Application;
@@ -29,6 +34,12 @@ public class Login extends Application {
 			zoznamBudov.najdiPobocku("Košice").pridajVozidlo(new Dodavka("Dodávka KE-445GD"));
 			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-123AB"));
 			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-789XY"));
+			
+			ArrayList<Zasielka> demoZasielky = new ArrayList<Zasielka>();
+			demoZasielky.add(new Balik(0.4, "Bratislava"));
+			demoZasielky.add(new List(1, "Košice"));
+			
+			zoznamBudov.najdiSklad("Trnava").prijmiZasielky(demoZasielky);
 		}
 		launch(args);
 	}
