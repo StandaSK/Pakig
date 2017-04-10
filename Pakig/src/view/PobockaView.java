@@ -1,6 +1,6 @@
 package view;
 
-import controller.PridanieVozidlaEventHandler;
+import controller.*;
 import budovy.Pobocka;
 import javafx.geometry.*;
 import javafx.scene.Scene;
@@ -22,10 +22,12 @@ public class PobockaView extends Stage {
         Button pridajVozidlo = new Button("Pridaj vozidlo");
         grid.add(pridajVozidlo, 0, 0);
 
-        pridajVozidlo.setOnAction(new PridanieVozidlaEventHandler(pobocka));
+        pridajVozidlo.setOnAction(new OtvorPridanieVozidlaEventHandler(pobocka));
 
         Button novaZasielka = new Button("Nová zásielka");
         grid.add(novaZasielka, 0, 1);
+
+        novaZasielka.setOnAction(new OtvorPridanieZasielkyEventHandler(pobocka));
 
         Scene scene = new Scene(grid, 300, 250);
         this.setScene(scene);

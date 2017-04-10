@@ -1,5 +1,6 @@
 package view;
 
+import vozidla.*;
 import controller.*;
 import budovy.*;
 import javafx.application.Application;
@@ -11,9 +12,21 @@ import javafx.scene.text.*;
 import javafx.stage.Stage;
 
 public class Login extends Application {
-	private ZoznamBudov zoznamBudov = new ZoznamBudov();
+	public final static boolean DEMO = true;
+	
+	private static ZoznamBudov zoznamBudov = new ZoznamBudov();
 
 	public static void main(String[] args) {
+		if (DEMO) {
+			zoznamBudov.pridajPobocku("Bratislava");
+			zoznamBudov.pridajPobocku("Košice");
+			zoznamBudov.pridajSklad("Trnava");
+			
+			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new Dodavka());
+			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new Dodavka());
+			zoznamBudov.najdiPobocku("Košice").pridajVozidlo(new Dodavka());
+			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka());
+		}
 		launch(args);
 	}
 
@@ -36,12 +49,14 @@ public class Login extends Application {
         grid.add(userName, 0, 1);
 
         TextField userTextField = new TextField();
+        userTextField.setPromptText("Zadajte meno");
         grid.add(userTextField, 1, 1);
 
         Label pw = new Label("Heslo:");
         grid.add(pw, 0, 2);
 
         PasswordField pwBox = new PasswordField();
+        pwBox.setPromptText("Zadajte heslo");
         grid.add(pwBox, 1, 2);
 
         // Pomocne zobrazenie GridPane

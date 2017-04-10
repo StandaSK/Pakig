@@ -9,7 +9,7 @@ public class Balik implements Zasielka {
 	private String ciel;
 	private double hmotnost;
 
-	public Balik(float hmotnost, String ciel) {
+	public Balik(double hmotnost, String ciel) {
 		this.nastavHmotnost(hmotnost);
 		this.nastavCiel(ciel);
 	}

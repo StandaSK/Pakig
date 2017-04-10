@@ -12,11 +12,9 @@ public class OsobneAuto extends Vozidlo {
 		super("Osobne auto", 10, 100, 100);
 	}
 
-	/*
 	public OsobneAuto(String nazov) {
 		super(nazov, 10, 100, 100);
 	}
-	*/
 
 	/*
 	public OsobneAuto(int kapacita, int rychlost, int cenaPrepravy) {

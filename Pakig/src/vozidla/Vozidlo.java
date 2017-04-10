@@ -33,21 +33,21 @@ public abstract class Vozidlo {
 	}
 
 	/**
-	 * @return the nazovVozidla
+	 * @return nazov vozidla
 	 */
 	public String getNazovVozidla() {
 		return nazovVozidla;
 	}
 
 	/**
-	 * @return kapacita
+	 * @return kapacita vozidla
 	 */
 	public int getKapacita() {
 		return kapacita;
 	}
 
 	/**
-	 * @return rychlost
+	 * @return rychlost vozidla
 	 */
 	public int getRychlost() {
 		return rychlost;

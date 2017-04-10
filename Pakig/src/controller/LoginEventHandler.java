@@ -29,7 +29,7 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
 
     	Optional<String> result = dialog.showAndWait();
     	result.ifPresent(letter -> {
-    		System.out.println("Vaša vo¾ba: " + letter);
+    		//System.out.println("Vaša vo¾ba: " + letter);
     		
     		switch (letter) {
     		case "Poboèka" :

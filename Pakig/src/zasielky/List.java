@@ -9,7 +9,7 @@ public class List implements Zasielka {
 	private String ciel;
 	private double hmotnost;
 
-	public List(float hmotnost, String ciel) {
+	public List(double hmotnost, String ciel) {
 		this.nastavHmotnost(hmotnost);
 		this.nastavCiel(ciel);
 	}

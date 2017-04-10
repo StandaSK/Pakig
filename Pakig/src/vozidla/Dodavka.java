@@ -12,11 +12,9 @@ public class Dodavka extends Vozidlo {
 		super("Dodavka", 50, 50, 50);
 	}
 
-	/*
 	public Dodavka(String nazov) {
 		super(nazov, 50, 50, 50);
 	}
-	*/
 
 	/*
 	public Dodavka(int kapacita, int rychlost, int cenaPrepravy) {

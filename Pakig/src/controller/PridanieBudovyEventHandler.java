@@ -44,12 +44,12 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 		result.ifPresent(text -> {
 			switch (typ) {
 			case 0 :
-				System.out.println("Vytváram novú poboèku: " + text);
+				//System.out.println("Vytváram novú poboèku: " + text);
 				
 				zoznamBudov.pridajPobocku(text);
 				break;
 			case 1 :
-				System.out.println("Vytváram nový sklad: " + text);
+				//System.out.println("Vytváram nový sklad: " + text);
 				
 				zoznamBudov.pridajSklad(text);
 				break;
