@@ -19,6 +19,11 @@ public class Pobocka implements Budova {
 	public void prijmiZasielky(List<Zasielka> zasielky) {
 		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));
 	}
+
+	@Override
+	public void odovzdajZasielky(Vozidlo vozidlo) {
+		vozidlo.pridajZasielky(zasielky);
+	}
 	
 	public void pridajZasielku(Zasielka zasielka) {
 		zasielky.add(zasielka);

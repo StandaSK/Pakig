@@ -4,6 +4,10 @@ import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import budovy.Pobocka;
 import controller.PridanieZasielkyEventHandler;
@@ -19,30 +23,38 @@ public class PridanieZasielkyView extends Stage {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
+        Text scenetitle = new Text("Nov· z·sielka");
+        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        grid.add(scenetitle, 0, 0, 2, 1);
+
         Label typZasielkyLabel = new Label("Typ z·sielky");
-        grid.add(typZasielkyLabel, 0, 0);
+        grid.add(typZasielkyLabel, 0, 1);
 
         ComboBox<String> typZasielky = new ComboBox<String>();
         typZasielky.getItems().addAll("BalÌk", "List");
         typZasielky.setValue("List");
-        grid.add(typZasielky, 1, 0);
+        grid.add(typZasielky, 1, 1);
 
         Label cielZasielkyLabel = new Label("Cieæ z·sielky");
-        grid.add(cielZasielkyLabel, 0, 1);
+        grid.add(cielZasielkyLabel, 0, 2);
 
         TextField cielZasielky = new TextField();
         cielZasielky.setPromptText("Zadajte cieæ z·sielky");
-        grid.add(cielZasielky, 1, 1);
+        grid.add(cielZasielky, 1, 2);
 
-        Label hmotnostZasielkyLabel = new Label("Hmotnosù z·sielky");
-        grid.add(hmotnostZasielkyLabel, 0, 2);
+        Label hmotnostZasielkyLabel = new Label("Hmotnosù (kg)");
+        grid.add(hmotnostZasielkyLabel, 0, 3);
 
         TextField hmotnostZasielky = new TextField();
         hmotnostZasielky.setPromptText("Zadajte hmotnosù z·sielky");
-        grid.add(hmotnostZasielky, 1, 2);
+        grid.add(hmotnostZasielky, 1, 3);
 
         Button pridajZasielku = new Button("Pridaj z·sielku");
-        grid.add(pridajZasielku, 1, 4);
+        HBox hbBtn = new HBox(10);
+
+        hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
+        hbBtn.getChildren().add(pridajZasielku);
+        grid.add(hbBtn, 1, 4);
 
         pridajZasielku.setOnAction(new PridanieZasielkyEventHandler(
         		pobocka, typZasielky, cielZasielky, hmotnostZasielky));

@@ -2,9 +2,9 @@ package controller;
 
 import javafx.event.*;
 
-public class OdoslanieZasielkyEventHandler implements EventHandler<ActionEvent> {
+public class OdoslanieZasielokEventHandler implements EventHandler<ActionEvent> {
 
-	public OdoslanieZasielkyEventHandler() {
+	public OdoslanieZasielokEventHandler() {
 		// TODO Auto-generated constructor stub
 	}
 

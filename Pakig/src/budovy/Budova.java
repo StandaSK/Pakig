@@ -11,7 +11,7 @@ import zasielky.Zasielka;
  */
 public interface Budova {
 	public void prijmiZasielky(List<Zasielka> zasielky);
-	//public void odosliZasielky();
+	public void odovzdajZasielky(Vozidlo vozidlo);
 	public void pridajVozidlo(Vozidlo vozidlo);
 	public void odoberVozidlo(Vozidlo vozidlo);
 	public void setNazov(String nazov);

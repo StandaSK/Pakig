@@ -6,6 +6,10 @@ import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class PridanieVozidlaView extends Stage {
@@ -19,23 +23,31 @@ public class PridanieVozidlaView extends Stage {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
+        Text scenetitle = new Text("Nové vozidlo");
+        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        grid.add(scenetitle, 0, 0, 2, 1);
+
         Label typVozidlaLabel = new Label("Typ vozidla");
-        grid.add(typVozidlaLabel, 0, 0);
+        grid.add(typVozidlaLabel, 0, 1);
 
         ComboBox<String> typVozidla = new ComboBox<String>();
         typVozidla.getItems().addAll("Bicykel", "Dodávka", "Kamión", "Osobné auto");
         typVozidla.setValue("Dodávka");
-        grid.add(typVozidla, 1, 0);
+        grid.add(typVozidla, 1, 1);
 
         Label nazovVozidlaLabel = new Label("Názov vozidla");
-        grid.add(nazovVozidlaLabel, 0, 1);
+        grid.add(nazovVozidlaLabel, 0, 2);
 
         TextField nazovVozidla = new TextField();
         nazovVozidla.setPromptText("Zadajte názov vozidla");
-        grid.add(nazovVozidla, 1, 1);
+        grid.add(nazovVozidla, 1, 2);
 
         Button pridajVozidlo = new Button("Pridaj vozidlo");
-        grid.add(pridajVozidlo, 1, 4);
+        HBox hbBtn = new HBox(10);
+
+        hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
+        hbBtn.getChildren().add(pridajVozidlo);
+        grid.add(hbBtn, 1, 3);
 
         pridajVozidlo.setOnAction(new PridanieVozidlaEventHandler(budova, typVozidla, nazovVozidla));
 

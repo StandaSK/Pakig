@@ -38,7 +38,7 @@ public class VyberSkladuView extends Stage {
 
         pridajSklad.setOnAction(new PridanieBudovyEventHandler(zoznamBudov, sklady, 1));
 
-		this.setScene(new Scene(grid, 500, 275));
+		this.setScene(new Scene(grid, 500, 150));
 		this.show();
 	}
 

@@ -14,6 +14,7 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 	/**
 	 * Konštruktor pre EventHandler starajúci sa o pridanie novej budovy
 	 * @param zoznamBudov Zoznam všetkých budov
+	 * @param budovy Aktualizuje sa pri tvorbe novej budoyy
 	 * @param typ 0 pre vytvorenie poboèky, 1 pre vytvorenie skladu
 	 */
 	public PridanieBudovyEventHandler(ZoznamBudov zoznamBudov, ComboBox<String> budovy, int typ) {
@@ -45,12 +46,10 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 			switch (typ) {
 			case 0 :
 				//System.out.println("Vytváram novú poboèku: " + text);
-				
 				zoznamBudov.pridajPobocku(text);
 				break;
 			case 1 :
 				//System.out.println("Vytváram nový sklad: " + text);
-				
 				zoznamBudov.pridajSklad(text);
 				break;
 			default :

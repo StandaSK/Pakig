@@ -18,13 +18,16 @@ public class Login extends Application {
 
 	public static void main(String[] args) {
 		if (DEMO) {
+			// Pridanie poboèiek
 			zoznamBudov.pridajPobocku("Bratislava");
 			zoznamBudov.pridajPobocku("Košice");
 			zoznamBudov.pridajSklad("Trnava");
 			
+			// Pridanie vozidiel poboèkám
 			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new Dodavka());
-			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new Dodavka());
+			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new OsobneAuto());
 			zoznamBudov.najdiPobocku("Košice").pridajVozidlo(new Dodavka());
+			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka());
 			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka());
 		}
 		launch(args);

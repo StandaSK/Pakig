@@ -1,13 +1,14 @@
 package vozidla;
 
-import java.util.ArrayList;
+import java.util.*;
+import budovy.*;
 import zasielky.Zasielka;
 
 /**
  * Abstraktna trieda Vozidlo sa vyuziva ako
  * spolocny nadtyp vsetkych vozidiel.
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>
- *
+ * 
  */
 public abstract class Vozidlo {
 	private String nazovVozidla;
@@ -26,6 +27,23 @@ public abstract class Vozidlo {
 
 	public void pridajZasielku(Zasielka zasielka) {
 		this.zasielky.add(zasielka);
+	}
+
+	public void pridajZasielky(List<Zasielka> zasielky) {
+		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));
+	}
+
+	public void odovzdajZasielky(Pobocka pobocka) {
+		ArrayList<Zasielka> kopia = new ArrayList<Zasielka>(zasielky);
+		this.odoberZasielky();
+		pobocka.odovzdajZasielky(this);
+		pobocka.prijmiZasielky(kopia);
+	}
+
+	public void odovzdajZasielky(Sklad sklad) {
+		ArrayList<Zasielka> kopia = new ArrayList<Zasielka>(zasielky);
+		this.odoberZasielky();
+		sklad.prijmiZasielky(kopia);
 	}
 
 	public void odoberZasielky() {

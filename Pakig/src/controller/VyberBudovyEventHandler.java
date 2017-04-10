@@ -25,13 +25,13 @@ public class VyberBudovyEventHandler implements EventHandler<ActionEvent> {
 			// Vybrana pobocka
 			Pobocka vybranaPobocka = zoznamBudov.najdiPobocku(budovy.getValue());
 			
-			new PobockaView(vybranaPobocka);
+			new PobockaView(vybranaPobocka, zoznamBudov);
 			break;
 		case 1 :
 			// Vybrany sklad
 			Sklad vybranySklad = zoznamBudov.najdiSklad(budovy.getValue());
 			
-			new SkladView(vybranySklad);
+			new SkladView(vybranySklad, zoznamBudov);
 			break;
 		default :
 			throw new IllegalStateException("Neexistujúci typ budovy!");

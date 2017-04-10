@@ -22,6 +22,11 @@ public class Sklad implements Budova {
 	}
 
 	@Override
+	public void odovzdajZasielky(Vozidlo vozidlo) {
+		//vozidlo.pridajZasielky(zasielky);
+	}
+
+	@Override
 	public void pridajVozidlo(Vozidlo vozidlo) {
 		this.vozidla.add(vozidlo);
 	}
