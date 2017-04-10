@@ -4,8 +4,7 @@ import java.util.Optional;
 
 import budovy.ZoznamBudov;
 import javafx.event.*;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 
 public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 	private ZoznamBudov zoznamBudov;
@@ -36,6 +35,8 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 			dialog.setTitle("Pridanie skladu - Pakig");
 			dialog.setHeaderText("Zadajte názov nového skladu: ");
 			break;
+		default :
+			throw new IllegalStateException("Neexistujúci typ budovy!");
 		}
 		
 		Optional<String> result = dialog.showAndWait();

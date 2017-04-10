@@ -3,10 +3,8 @@ package controller;
 import java.util.*;
 import budovy.*;
 import view.*;
-import javafx.application.Platform;
 import javafx.event.*;
 import javafx.scene.control.*;
-import javafx.scene.control.Alert.AlertType;
 
 
 public class LoginEventHandler implements EventHandler<ActionEvent> {
@@ -41,15 +39,7 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
     			new VyberSkladuView(zoznamBudov);
     			break;
     		default :
-    			Alert alert = new Alert(AlertType.ERROR);
-    			alert.setTitle("Chyba! - Pakig");
-    			alert.setHeaderText("Chyba!");
-    			alert.setContentText("Nevybrali ste typ pracoviska!");
-    			alert.showAndWait();
-    			Platform.exit();
-    			
-    			// Riesenie pomocou vyhodenia vynimky
-    			//throw new IllegalStateException("Nevybrali ste správny typ pracoviska!");
+    			throw new IllegalStateException("Neznámy typ pracoviska!");
     		}
     	});
 	}

@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class VyberSkladuView extends Stage {
 
 	public VyberSkladuView(ZoznamBudov zoznamBudov) {
-		this.setTitle("Sklad - Pakig");
+		this.setTitle("Výber skladu - Pakig");
 
 		GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);

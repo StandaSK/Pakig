@@ -2,6 +2,8 @@ package view;
 
 import controller.PridanieBudovyEventHandler;
 import budovy.ZoznamBudov;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -11,7 +13,7 @@ import javafx.stage.Stage;
 public class VyberPobockyView extends Stage {
 
 	public VyberPobockyView(ZoznamBudov zoznamBudov) {
-		this.setTitle("Poboèka - Pakig");
+		this.setTitle("Výber poboèky - Pakig");
 
 		GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -29,6 +31,17 @@ public class VyberPobockyView extends Stage {
 
         Button potvrdVyber = new Button("OK");
         grid.add(potvrdVyber, 2, 0);
+        
+        potvrdVyber.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				System.out.println("TEST");
+				//Stage pb = new PobockaView(zoznamBudov.getPobocky().get(0));
+				//pb.show();
+			}
+        	
+        });
 
         potvrdVyber.setOnAction(null);
 
