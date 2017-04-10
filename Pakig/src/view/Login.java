@@ -24,11 +24,11 @@ public class Login extends Application {
 			zoznamBudov.pridajSklad("Trnava");
 			
 			// Pridanie vozidiel poboèkám
-			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new Dodavka());
-			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new OsobneAuto());
-			zoznamBudov.najdiPobocku("Košice").pridajVozidlo(new Dodavka());
-			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka());
-			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka());
+			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new Dodavka("Dodávka BA-354CK"));
+			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new OsobneAuto("Os. Auto BL-617KF"));
+			zoznamBudov.najdiPobocku("Košice").pridajVozidlo(new Dodavka("Dodávka KE-445GD"));
+			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-123AB"));
+			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-789XY"));
 		}
 		launch(args);
 	}

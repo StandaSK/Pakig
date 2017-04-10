@@ -1,8 +1,7 @@
 package view;
 
 import controller.*;
-import budovy.Pobocka;
-import budovy.ZoznamBudov;
+import budovy.*;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -29,6 +28,17 @@ public class PobockaView extends Stage {
         grid.add(novaZasielka, 0, 1);
 
         novaZasielka.setOnAction(new OtvorPridanieZasielkyEventHandler(pobocka));
+
+        // TODO Odoberanie jednotlivych zasielok
+        Button odovzdajZasielku = new Button("Odovzdaj zásielku");
+        grid.add(odovzdajZasielku, 0, 2);
+
+        odovzdajZasielku.setOnAction(new OdovzdajZasielkuEventHandler(pobocka));
+
+        TextArea vozidlaVypis = new TextArea();
+        pobocka.getVozidla().forEach(vozidlo -> vozidlaVypis.appendText(vozidlo.getNazov() + "\n"));
+        vozidlaVypis.setEditable(false);
+        grid.add(vozidlaVypis, 1, 0, 2, 6);
 
         Scene scene = new Scene(grid, 300, 250);
         this.setScene(scene);

@@ -1,6 +1,7 @@
 package budovy;
 
 import java.util.*;
+
 import vozidla.Vozidlo;
 import zasielky.Zasielka;
 
@@ -30,6 +31,11 @@ public class Pobocka implements Budova {
 	}
 
 	@Override
+	public ArrayList<Zasielka> getZasielky() {
+		return zasielky;
+	}
+
+	@Override
 	public void pridajVozidlo(Vozidlo vozidlo) {
 		this.vozidla.add(vozidlo);
 	}
@@ -37,6 +43,20 @@ public class Pobocka implements Budova {
 	@Override
 	public void odoberVozidlo(Vozidlo vozidlo) {
 		this.vozidla.remove(vozidlo);
+	}
+
+	@Override
+	public ArrayList<Vozidlo> getVozidla() {
+		return vozidla;
+	}
+
+	@Override
+	public Vozidlo getVozidlo(String nazov) {
+		for (Vozidlo v : vozidla) {
+			if (v.getNazov().equals(nazov))
+				return v;
+		}
+		return null;
 	}
 
 	@Override

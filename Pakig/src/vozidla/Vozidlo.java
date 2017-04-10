@@ -11,14 +11,14 @@ import zasielky.Zasielka;
  * 
  */
 public abstract class Vozidlo {
-	private String nazovVozidla;
+	private String nazov;
 	private int kapacita;
 	private int rychlost;
 	private int cenaPrepravy;
 	private ArrayList<Zasielka> zasielky;
 
-	public Vozidlo(String nazovVozidla, int kapacita, int rychlost, int cenaPrepravy) {
-		this.nazovVozidla = nazovVozidla;
+	public Vozidlo(String nazov, int kapacita, int rychlost, int cenaPrepravy) {
+		this.nazov = nazov;
 		this.kapacita = kapacita;
 		this.rychlost = rychlost;
 		this.cenaPrepravy = cenaPrepravy;
@@ -53,8 +53,8 @@ public abstract class Vozidlo {
 	/**
 	 * @return nazov vozidla
 	 */
-	public String getNazovVozidla() {
-		return nazovVozidla;
+	public String getNazov() {
+		return nazov;
 	}
 
 	/**
@@ -89,7 +89,7 @@ public abstract class Vozidlo {
 	 * @param nazovVozidla the nazovVozidla to set
 	 */
 	public void setNazovVozidla(String nazovVozidla) {
-		this.nazovVozidla = nazovVozidla;
+		this.nazov = nazovVozidla;
 	}
 
 	/**

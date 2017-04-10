@@ -27,6 +27,21 @@ public class Sklad implements Budova {
 	}
 
 	@Override
+	public ArrayList<Zasielka> getZasielky() {
+		return zasielky;
+	}
+	
+	public ArrayList<Zasielka> triedZasielky(String ciel) {
+		ArrayList<Zasielka> triedeneZasielky = new ArrayList<Zasielka>();
+		
+		for (Zasielka z : zasielky) {
+			if (z.zistiCiel().equals(ciel))
+				triedeneZasielky.add(z);
+		}
+		return triedeneZasielky;
+	}
+
+	@Override
 	public void pridajVozidlo(Vozidlo vozidlo) {
 		this.vozidla.add(vozidlo);
 	}
@@ -34,6 +49,20 @@ public class Sklad implements Budova {
 	@Override
 	public void odoberVozidlo(Vozidlo vozidlo) {
 		this.vozidla.remove(vozidlo);
+	}
+
+	@Override
+	public ArrayList<Vozidlo> getVozidla() {
+		return vozidla;
+	}
+
+	@Override
+	public Vozidlo getVozidlo(String nazov) {
+		for (Vozidlo v : vozidla) {
+			if (v.getNazov().equals(nazov))
+				return v;
+		}
+		return null;
 	}
 
 	@Override
