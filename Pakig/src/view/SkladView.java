@@ -2,6 +2,7 @@ package view;
 
 import budovy.Sklad;
 import javafx.geometry.*;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -19,6 +20,10 @@ public class SkladView extends Stage {
 
         Button pridajVozidlo = new Button("Pridaj vozidlo");
         grid.add(pridajVozidlo, 0, 0);
+        
+        Scene scene = new Scene(grid, 300, 250);
+        this.setScene(scene);
+        this.show();
 	}
 
 }

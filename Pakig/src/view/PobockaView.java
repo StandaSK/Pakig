@@ -1,9 +1,9 @@
 package view;
 
 import budovy.Pobocka;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.event.*;
 import javafx.geometry.*;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -34,6 +34,8 @@ public class PobockaView extends Stage {
         Button novaZasielka = new Button("Nová zásielka");
         grid.add(novaZasielka, 0, 1);
         
+        Scene scene = new Scene(grid, 300, 250);
+        this.setScene(scene);
         this.show();
 	}
 

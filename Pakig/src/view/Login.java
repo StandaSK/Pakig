@@ -56,7 +56,7 @@ public class Login extends Application {
 
         btn.setOnAction(new LoginEventHandler(zoznamBudov));
 
-        Scene scene = new Scene(grid, 300, 275);
+        Scene scene = new Scene(grid, 300, 250);
         primaryStage.setScene(scene);
 
         primaryStage.show();

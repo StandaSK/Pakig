@@ -1,6 +1,6 @@
 package view;
 
-import controller.PridanieBudovyEventHandler;
+import controller.*;
 import budovy.ZoznamBudov;
 import javafx.geometry.*;
 import javafx.scene.Scene;
@@ -31,7 +31,7 @@ public class VyberSkladuView extends Stage {
         Button potvrdVyber = new Button("OK");
         grid.add(potvrdVyber, 2, 0);
 
-        potvrdVyber.setOnAction(null);
+        potvrdVyber.setOnAction(new VyberBudovyEventHandler(zoznamBudov, sklady, 1));
 
         Button pridajSklad = new Button("Pridaj sklad");
         grid.add(pridajSklad, 3, 0);

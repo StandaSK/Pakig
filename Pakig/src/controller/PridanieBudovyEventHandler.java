@@ -53,6 +53,8 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 				
 				zoznamBudov.pridajSklad(text);
 				break;
+			default :
+				throw new IllegalStateException("Neexistujúci typ budovy!");
 			}
 			
 			// TODO Prerobit pridavanie do ComboBoxu cez Observer
