@@ -1,6 +1,7 @@
 package view;
 
 import javafx.geometry.*;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -19,12 +20,13 @@ public class PridanieVozidlaView extends Stage {
         
         Label typVozidlaLabel = new Label("Typ vozidla");
         grid.add(typVozidlaLabel, 0, 0);
-        
+
         ComboBox<String> typVozidla = new ComboBox<String>();
-        typVozidla.getItems().add("Dodavka");
+        typVozidla.getItems().addAll("Bicykel", "Dodávka", "Kamión", "Osobné auto");
+        typVozidla.setValue("Dodávka");
         grid.add(typVozidla, 1, 0);
         
-        Label nazovVozidlaLabel = new Label("Nazov vozidla");
+        Label nazovVozidlaLabel = new Label("Názov vozidla");
         grid.add(nazovVozidlaLabel, 0, 1);
         
         TextField nazovVozidla = new TextField();
@@ -32,6 +34,10 @@ public class PridanieVozidlaView extends Stage {
         
         Button pridajVozidlo = new Button("Pridaj vozidlo");
         grid.add(pridajVozidlo, 1, 4);
+        
+        Scene scene = new Scene(grid, 300, 250);
+        this.setScene(scene);
+        this.show();
 	}
 
 }

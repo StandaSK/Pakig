@@ -1,5 +1,6 @@
 package view;
 
+import controller.PridanieVozidlaEventHandler;
 import budovy.Sklad;
 import javafx.geometry.*;
 import javafx.scene.Scene;
@@ -20,7 +21,12 @@ public class SkladView extends Stage {
 
         Button pridajVozidlo = new Button("Pridaj vozidlo");
         grid.add(pridajVozidlo, 0, 0);
-        
+
+        pridajVozidlo.setOnAction(new PridanieVozidlaEventHandler(sklad));
+
+        Button odosliZasielky = new Button("Odošli zásielky");
+        grid.add(odosliZasielky, 0, 1);
+
         Scene scene = new Scene(grid, 300, 250);
         this.setScene(scene);
         this.show();
