@@ -24,6 +24,9 @@ public class Pobocka implements Budova {
 	@Override
 	public void odovzdajZasielky(Vozidlo vozidlo) {
 		vozidlo.pridajZasielky(zasielky);
+
+		//TODO Prerobi nech odoberá len zásielky neurèené pre danú poboèku
+		zasielky.clear();
 	}
 	
 	public void pridajZasielku(Zasielka zasielka) {

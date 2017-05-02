@@ -21,8 +21,10 @@ public class OdoslanieZasielokEventHandler implements EventHandler<ActionEvent> 
 		Vozidlo vybraneVozidlo = sklad.getVozidlo(vyberVozidla.getValue());
 		Pobocka vybranaPobocka = ZoznamBudov.najdiPobocku(vyberPobocky.getText());
 
-		vybraneVozidlo.setZasielky(sklad.triedZasielky(vyberPobocky.toString()));
+		//TODO Odobraù danÈ z·sielky z danÈho skladu
+		vybraneVozidlo.setZasielky(sklad.triedZasielky(vyberPobocky.getText()));
 		vybraneVozidlo.odovzdajZasielky(vybranaPobocka);
+		sklad.prijmiZasielky(vybraneVozidlo.getZasielky());
 	}
 
 }

@@ -33,11 +33,10 @@ public class PobockaView extends Stage {
 
         novaZasielka.setOnAction(new OtvorPridanieZasielkyEventHandler(pobocka));
 
-        // TODO Odoberanie jednotlivych zasielok
-        Button odovzdajZasielku = new Button("Odovzdaj zásielku");
+        Button odovzdajZasielku = new Button("Odovzdaj zásielky");
         grid.add(odovzdajZasielku, 0, 2);
 
-        odovzdajZasielku.setOnAction(new OdovzdajZasielkuEventHandler(pobocka));
+        odovzdajZasielku.setOnAction(new OdovzdajZasielkyEventHandler(pobocka));
 
         Button vypisVozidla = new Button("Vypíš vozidlá");
         grid.add(vypisVozidla, 0, 3);

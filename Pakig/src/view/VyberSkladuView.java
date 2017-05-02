@@ -24,7 +24,6 @@ public class VyberSkladuView extends Stage {
 
         ComboBox<String> sklady = new ComboBox<String>();
         ZoznamBudov.getSklady().forEach(sklad -> sklady.getItems().add(sklad.getNazov()));
-        //sklady.getItems().add("Trnava");
         sklady.setValue("-- Vyberte --");
         grid.add(sklady, 1, 0);
 

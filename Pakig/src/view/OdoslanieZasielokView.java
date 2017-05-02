@@ -28,12 +28,12 @@ public class OdoslanieZasielokView extends Stage {
 
         Label vyberVozidlaLabel = new Label("Vyber vozidlo");
         grid.add(vyberVozidlaLabel, 0, 1);
-        
+
         ComboBox<String> vyberVozidla = new ComboBox<String>();
-        vyberVozidla.setValue("-- Vyberte --");;
+        vyberVozidla.setValue("-- Vyberte --");
         sklad.getVozidla().forEach(vozidlo -> vyberVozidla.getItems().add(vozidlo.getNazov()));
         grid.add(vyberVozidla, 1, 1);
-        
+
         Button posliVozidlo = new Button("Pošli vozidlo");
         grid.add(posliVozidlo, 1, 3);
 
