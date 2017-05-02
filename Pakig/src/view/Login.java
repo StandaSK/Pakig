@@ -1,7 +1,7 @@
 package view;
 
 // Importy modelu slúžia len pre DEMO, neporušujú MVC
-import budovy.*;
+import budovy.ZoznamBudov;
 import vozidla.*;
 import zasielky.*;
 

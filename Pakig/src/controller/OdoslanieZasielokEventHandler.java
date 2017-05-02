@@ -19,7 +19,7 @@ public class OdoslanieZasielokEventHandler implements EventHandler<ActionEvent> 
 	@Override
 	public void handle(ActionEvent arg0) {
 		Vozidlo vybraneVozidlo = sklad.getVozidlo(vyberVozidla.getValue());
-		Pobocka vybranaPobocka = ZoznamBudov.najdiPobocku(vyberPobocky.toString());
+		Pobocka vybranaPobocka = ZoznamBudov.najdiPobocku(vyberPobocky.getText());
 
 		vybraneVozidlo.setZasielky(sklad.triedZasielky(vyberPobocky.toString()));
 		vybraneVozidlo.odovzdajZasielky(vybranaPobocka);
