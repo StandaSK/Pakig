@@ -1,7 +1,7 @@
 package view;
 
 import controller.OdoslanieZasielokEventHandler;
-import budovy.*;
+import budovy.Sklad;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class OdoslanieZasielokView extends Stage {
 
-	public OdoslanieZasielokView(Sklad sklad, ZoznamBudov zoznamBudov) {
+	public OdoslanieZasielokView(Sklad sklad) {
 		this.setTitle("Sklad " + sklad.getNazov() + " - Odosielanie zásielok - Pakig");
 
 		GridPane grid = new GridPane();
@@ -37,7 +37,7 @@ public class OdoslanieZasielokView extends Stage {
         Button posliVozidlo = new Button("Pošli vozidlo");
         grid.add(posliVozidlo, 1, 3);
 
-        posliVozidlo.setOnAction(new OdoslanieZasielokEventHandler(sklad, zoznamBudov, vyberPobocky, vyberVozidla));
+        posliVozidlo.setOnAction(new OdoslanieZasielokEventHandler(sklad, vyberPobocky, vyberVozidla));
 
         Scene scene = new Scene(grid, 300, 250);
         this.setScene(scene);

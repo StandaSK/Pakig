@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class VyberPobockyView extends Stage {
 
-	public VyberPobockyView(ZoznamBudov zoznamBudov) {
+	public VyberPobockyView() {
 		this.setTitle("Výber poboèky - Pakig");
 
 		GridPane grid = new GridPane();
@@ -23,19 +23,19 @@ public class VyberPobockyView extends Stage {
         grid.add(vyberPobocky, 0, 0);
 
         ComboBox<String> pobocky = new ComboBox<String>();
-        zoznamBudov.getPobocky().forEach(pobocka -> pobocky.getItems().add(pobocka.getNazov()));
+        ZoznamBudov.getPobocky().forEach(pobocka -> pobocky.getItems().add(pobocka.getNazov()));
         pobocky.setValue("-- Vyberte --");
         grid.add(pobocky, 1, 0);
 
         Button potvrdVyber = new Button("OK");
         grid.add(potvrdVyber, 2, 0);
 
-        potvrdVyber.setOnAction(new VyberBudovyEventHandler(zoznamBudov, pobocky, 0));
+        potvrdVyber.setOnAction(new VyberBudovyEventHandler(pobocky, 0));
 
         Button pridajPobocku = new Button("Pridaj poboèku");
         grid.add(pridajPobocku, 3, 0);
 
-        pridajPobocku.setOnAction(new PridanieBudovyEventHandler(zoznamBudov, pobocky, 0));
+        pridajPobocku.setOnAction(new PridanieBudovyEventHandler(pobocky, 0));
 
 		this.setScene(new Scene(grid, 500, 150));
 		this.show();

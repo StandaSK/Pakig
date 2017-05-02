@@ -1,17 +1,15 @@
 package controller;
 
 import java.util.*;
-import budovy.*;
 import view.*;
 import javafx.event.*;
 import javafx.scene.control.*;
 
 
 public class LoginEventHandler implements EventHandler<ActionEvent> {
-	private ZoznamBudov zoznamBudov;
 
-	public LoginEventHandler(ZoznamBudov zoznamBudov) {
-		this.zoznamBudov = zoznamBudov;
+	public LoginEventHandler() {
+		
 	}
 
 	@Override
@@ -21,7 +19,6 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
     	choices.add("Poboèka");
     	choices.add("Sklad");
 
-    	//ChoiceDialog<String> dialog = new ChoiceDialog<>("-- Vyberte --", choices);
     	ChoiceDialog<String> dialog = new ChoiceDialog<>("Poboèka", choices);
     	dialog.setTitle("Výber typu pracoviska - Pakig");
     	dialog.setHeaderText("Prihlásenie úspešné!");
@@ -29,14 +26,13 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
 
     	Optional<String> result = dialog.showAndWait();
     	result.ifPresent(letter -> {
-    		//System.out.println("Vaša vo¾ba: " + letter);
     		
     		switch (letter) {
     		case "Poboèka" :
-    	        new VyberPobockyView(zoznamBudov);
+    	        new VyberPobockyView();
     			break;
     		case "Sklad" :
-    			new VyberSkladuView(zoznamBudov);
+    			new VyberSkladuView();
     			break;
     		default :
     			throw new IllegalStateException("Neznámy typ pracoviska!");

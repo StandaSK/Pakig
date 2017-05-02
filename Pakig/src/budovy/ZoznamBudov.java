@@ -2,20 +2,19 @@ package budovy;
 
 import java.util.ArrayList;
 
-public class ZoznamBudov {
-	private ArrayList<Pobocka> pobocky;
-	private ArrayList<Sklad> sklady;
+public final class ZoznamBudov {
+	private static ArrayList<Pobocka> pobocky = new ArrayList<Pobocka>();
+	private static ArrayList<Sklad> sklady = new ArrayList<Sklad>();
 
-	public ZoznamBudov() {
-		this.pobocky = new ArrayList<Pobocka>();
-		this.sklady = new ArrayList<Sklad>();
+	private ZoznamBudov() {
+		
 	}
 
-	public void pridajPobocku(String nazov) {
-		this.pobocky.add(new Pobocka(nazov));
+	public static void pridajPobocku(String nazov) {
+		pobocky.add(new Pobocka(nazov));
 	}
 
-	public Pobocka najdiPobocku(String nazov) {
+	public static Pobocka najdiPobocku(String nazov) {
 		for (Pobocka p : pobocky) {
 			if (p.getNazov().equals(nazov))
 				return p;
@@ -23,11 +22,11 @@ public class ZoznamBudov {
 		return null;
 	}
 
-	public void pridajSklad(String nazov) {
-		this.sklady.add(new Sklad(nazov));
+	public static void pridajSklad(String nazov) {
+		sklady.add(new Sklad(nazov));
 	}
 
-	public Sklad najdiSklad(String nazov) {
+	public static Sklad najdiSklad(String nazov) {
 		for (Sklad s : sklady) {
 			if (s.getNazov().equals(nazov))
 				return s;
@@ -35,11 +34,11 @@ public class ZoznamBudov {
 		return null;
 	}
 
-	public ArrayList<Pobocka> getPobocky() {
+	public static ArrayList<Pobocka> getPobocky() {
 		return pobocky;
 	}
 
-	public ArrayList<Sklad> getSklady() {
+	public static ArrayList<Sklad> getSklady() {
 		return sklady;
 	}
 }

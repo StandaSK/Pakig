@@ -1,7 +1,7 @@
 package view;
 
 import controller.*;
-import budovy.*;
+import budovy.Pobocka;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class PobockaView extends Stage {
 
-	public PobockaView(Pobocka pobocka, ZoznamBudov zoznamBudov) {
+	public PobockaView(Pobocka pobocka) {
 		this.setTitle("Poboèka " + pobocka.getNazov() + " - Pakig");
 
 		GridPane grid = new GridPane();

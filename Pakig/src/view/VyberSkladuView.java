@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class VyberSkladuView extends Stage {
 
-	public VyberSkladuView(ZoznamBudov zoznamBudov) {
+	public VyberSkladuView() {
 		this.setTitle("Výber skladu - Pakig");
 
 		GridPane grid = new GridPane();
@@ -23,7 +23,7 @@ public class VyberSkladuView extends Stage {
         grid.add(vyberSkladu, 0, 0);
 
         ComboBox<String> sklady = new ComboBox<String>();
-        zoznamBudov.getSklady().forEach(sklad -> sklady.getItems().add(sklad.getNazov()));
+        ZoznamBudov.getSklady().forEach(sklad -> sklady.getItems().add(sklad.getNazov()));
         //sklady.getItems().add("Trnava");
         sklady.setValue("-- Vyberte --");
         grid.add(sklady, 1, 0);
@@ -31,12 +31,12 @@ public class VyberSkladuView extends Stage {
         Button potvrdVyber = new Button("OK");
         grid.add(potvrdVyber, 2, 0);
 
-        potvrdVyber.setOnAction(new VyberBudovyEventHandler(zoznamBudov, sklady, 1));
+        potvrdVyber.setOnAction(new VyberBudovyEventHandler(sklady, 1));
 
         Button pridajSklad = new Button("Pridaj sklad");
         grid.add(pridajSklad, 3, 0);
 
-        pridajSklad.setOnAction(new PridanieBudovyEventHandler(zoznamBudov, sklady, 1));
+        pridajSklad.setOnAction(new PridanieBudovyEventHandler(sklady, 1));
 
 		this.setScene(new Scene(grid, 500, 150));
 		this.show();

@@ -1,13 +1,12 @@
 package view;
 
-import java.util.ArrayList;
-
-import vozidla.*;
-import zasielky.Balik;
-import zasielky.List;
-import zasielky.Zasielka;
-import controller.*;
+// Importy modelu slúžia len pre DEMO, neporušujú MVC
 import budovy.*;
+import vozidla.*;
+import zasielky.*;
+
+import controller.*;
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.geometry.*;
 import javafx.scene.*;
@@ -18,29 +17,26 @@ import javafx.stage.Stage;
 
 public class Login extends Application {
 	public final static boolean DEMO = true;
-	
-	private static ZoznamBudov zoznamBudov = new ZoznamBudov();
 
 	public static void main(String[] args) {
 		if (DEMO) {
 			// Pridanie poboèiek
-			zoznamBudov.pridajPobocku("Bratislava");
-			zoznamBudov.pridajPobocku("Košice");
-			zoznamBudov.pridajSklad("Trnava");
+			ZoznamBudov.pridajPobocku("Bratislava");
+			ZoznamBudov.pridajPobocku("Košice");
+			ZoznamBudov.pridajSklad("Trnava");
 			
 			// Pridanie vozidiel poboèkám
-			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new Dodavka("Dodávka BA-354CK"));
-			zoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new OsobneAuto("Os. Auto BL-617KF"));
-			zoznamBudov.najdiPobocku("Košice").pridajVozidlo(new Dodavka("Dodávka KE-445GD"));
-			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-123AB"));
-			zoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-789XY"));
+			ZoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new Dodavka("Dodávka BA-354CK"));
+			ZoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new OsobneAuto("Os. Auto BL-617KF"));
+			ZoznamBudov.najdiPobocku("Košice").pridajVozidlo(new Dodavka("Dodávka KE-445GD"));
+			ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-123AB"));
+			ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-789XY"));
 			
 			ArrayList<Zasielka> demoZasielky = new ArrayList<Zasielka>();
 			demoZasielky.add(new Balik(0.4, "Bratislava"));
 			demoZasielky.add(new List(1, "Košice"));
 			
-			zoznamBudov.najdiSklad("Trnava").prijmiZasielky(demoZasielky);
-		}
+			ZoznamBudov.najdiSklad("Trnava").prijmiZasielky(demoZasielky);		}
 		launch(args);
 	}
 
@@ -83,7 +79,7 @@ public class Login extends Application {
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
 
-        btn.setOnAction(new LoginEventHandler(zoznamBudov));
+        btn.setOnAction(new LoginEventHandler());
 
         Scene scene = new Scene(grid, 300, 250);
         primaryStage.setScene(scene);

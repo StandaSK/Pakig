@@ -1,13 +1,11 @@
 package controller;
 
 import java.util.Optional;
-
 import budovy.ZoznamBudov;
 import javafx.event.*;
 import javafx.scene.control.*;
 
 public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
-	private ZoznamBudov zoznamBudov;
 	private ComboBox<String> budovy;
 	private int typ;
 	
@@ -17,8 +15,7 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 	 * @param budovy Aktualizuje sa pri tvorbe novej budoyy
 	 * @param typ 0 pre vytvorenie poboèky, 1 pre vytvorenie skladu
 	 */
-	public PridanieBudovyEventHandler(ZoznamBudov zoznamBudov, ComboBox<String> budovy, int typ) {
-		this.zoznamBudov = zoznamBudov;
+	public PridanieBudovyEventHandler(ComboBox<String> budovy, int typ) {
 		this.budovy = budovy;
 		this.typ = typ;
 	}
@@ -46,11 +43,11 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 			switch (typ) {
 			case 0 :
 				//System.out.println("Vytváram novú poboèku: " + text);
-				zoznamBudov.pridajPobocku(text);
+				ZoznamBudov.pridajPobocku(text);
 				break;
 			case 1 :
 				//System.out.println("Vytváram nový sklad: " + text);
-				zoznamBudov.pridajSklad(text);
+				ZoznamBudov.pridajSklad(text);
 				break;
 			default :
 				throw new IllegalStateException("Neexistujúci typ budovy!");
