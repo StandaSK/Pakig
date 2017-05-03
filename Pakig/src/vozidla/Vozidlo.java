@@ -25,10 +25,6 @@ public abstract class Vozidlo {
 		this.zasielky = new ArrayList<Zasielka>();
 	}
 
-	public void pridajZasielku(Zasielka zasielka) {
-		this.zasielky.add(zasielka);
-	}
-
 	public void pridajZasielky(List<Zasielka> zasielky) {
 		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));
 	}
