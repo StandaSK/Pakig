@@ -1,7 +1,7 @@
 package vozidla;
 
 /**
- * Bicykel ma minmalnu kapacitu, nizku rychlost a
+ * Bicykel ma minimalnu kapacitu, nizku rychlost a
  * nizku cenu prepravy. Vyuziva sa len na dorucovanie
  * listov z pobociek priamo adresatom.
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>

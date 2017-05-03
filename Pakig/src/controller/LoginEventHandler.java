@@ -26,7 +26,7 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
 
     	Optional<String> result = dialog.showAndWait();
     	result.ifPresent(letter -> {
-    		
+
     		switch (letter) {
     		case "Poboèka" :
     	        new VyberPobockyView();

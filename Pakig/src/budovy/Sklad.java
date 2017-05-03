@@ -1,7 +1,6 @@
 package budovy;
 
 import java.util.*;
-
 import vozidla.Vozidlo;
 import zasielky.Zasielka;
 
@@ -9,7 +8,7 @@ public class Sklad implements Budova {
 	private String nazov;
 	private ArrayList<Vozidlo> vozidla;
 	private ArrayList<Zasielka> zasielky;
-	
+
 	public Sklad(String nazov) {
 		this.setNazov(nazov);
 		this.vozidla = new ArrayList<Vozidlo>();
@@ -28,13 +27,13 @@ public class Sklad implements Budova {
 
 	@Override
 	public ArrayList<Zasielka> getZasielky() {
-		return zasielky;
+		return this.zasielky;
 	}
-	
+
 	public ArrayList<Zasielka> triedZasielky(String ciel) {
 		ArrayList<Zasielka> triedeneZasielky = new ArrayList<Zasielka>();
-		
-		for (Zasielka z : zasielky) {
+
+		for (Zasielka z : this.zasielky) {
 			if (z.zistiCiel().equals(ciel))
 				triedeneZasielky.add(z);
 		}
@@ -53,12 +52,12 @@ public class Sklad implements Budova {
 
 	@Override
 	public ArrayList<Vozidlo> getVozidla() {
-		return vozidla;
+		return this.vozidla;
 	}
 
 	@Override
 	public Vozidlo getVozidlo(String nazov) {
-		for (Vozidlo v : vozidla) {
+		for (Vozidlo v : this.vozidla) {
 			if (v.getNazov().equals(nazov))
 				return v;
 		}
@@ -72,7 +71,7 @@ public class Sklad implements Budova {
 
 	@Override
 	public String getNazov() {
-		return nazov;
+		return this.nazov;
 	}
 
 }

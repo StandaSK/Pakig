@@ -23,19 +23,19 @@ public class Pobocka implements Budova {
 
 	@Override
 	public void odovzdajZasielky(Vozidlo vozidlo) {
-		vozidlo.pridajZasielky(zasielky);
+		vozidlo.pridajZasielky(this.zasielky);
 
 		//TODO Prerobiù nech odober· len z·sielky neurËenÈ pre dan˙ poboËku
-		zasielky.clear();
+		this.zasielky.clear();
 	}
 	
 	public void pridajZasielku(Zasielka zasielka) {
-		zasielky.add(zasielka);
+		this.zasielky.add(zasielka);
 	}
 
 	@Override
 	public ArrayList<Zasielka> getZasielky() {
-		return zasielky;
+		return this.zasielky;
 	}
 
 	@Override
@@ -50,12 +50,12 @@ public class Pobocka implements Budova {
 
 	@Override
 	public ArrayList<Vozidlo> getVozidla() {
-		return vozidla;
+		return this.vozidla;
 	}
 
 	@Override
 	public Vozidlo getVozidlo(String nazov) {
-		for (Vozidlo v : vozidla) {
+		for (Vozidlo v : this.vozidla) {
 			if (v.getNazov().equals(nazov))
 				return v;
 		}
@@ -69,7 +69,7 @@ public class Pobocka implements Budova {
 
 	@Override
 	public String getNazov() {
-		return nazov;
+		return this.nazov;
 	}
 
 }

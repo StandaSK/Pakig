@@ -19,15 +19,13 @@ public class VyberBudovyEventHandler implements EventHandler<ActionEvent> {
 
 		switch (typ) {
 		case 0 :
-			// Vybrana pobocka
+			// Vybraná poboèka
 			Pobocka vybranaPobocka = ZoznamBudov.najdiPobocku(budovy.getValue());
-			
 			new PobockaView(vybranaPobocka);
 			break;
 		case 1 :
-			// Vybrany sklad
+			// Vybraný sklad
 			Sklad vybranySklad = ZoznamBudov.najdiSklad(budovy.getValue());
-			
 			new SkladView(vybranySklad);
 			break;
 		default :

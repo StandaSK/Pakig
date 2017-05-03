@@ -15,7 +15,7 @@ public class OdovzdajZasielkyEventHandler implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent arg0) {
 		String nazov = this.pobocka.getNazov();
-		
+
 		Iterator<Zasielka> iterator = pobocka.getZasielky().iterator();
 
 		while (iterator.hasNext()) {

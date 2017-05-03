@@ -11,7 +11,6 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 	
 	/**
 	 * Konštruktor pre EventHandler starajúci sa o pridanie novej budovy
-	 * @param zoznamBudov Zoznam všetkých budov
 	 * @param budovy Aktualizuje sa pri tvorbe novej budoyy
 	 * @param typ 0 pre vytvorenie poboèky, 1 pre vytvorenie skladu
 	 */
@@ -23,7 +22,7 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent arg0) {
 		TextInputDialog dialog = new TextInputDialog();
-		
+
 		switch (typ) {
 		case 0 :
 			dialog.setTitle("Pridanie poboèky - Pakig");
@@ -36,23 +35,21 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 		default :
 			throw new IllegalStateException("Neexistujúci typ budovy!");
 		}
-		
+
 		Optional<String> result = dialog.showAndWait();
-		
+
 		result.ifPresent(text -> {
 			switch (typ) {
 			case 0 :
-				//System.out.println("Vytváram novú poboèku: " + text);
 				ZoznamBudov.pridajPobocku(text);
 				break;
 			case 1 :
-				//System.out.println("Vytváram nový sklad: " + text);
 				ZoznamBudov.pridajSklad(text);
 				break;
 			default :
 				throw new IllegalStateException("Neexistujúci typ budovy!");
 			}
-			
+
 			// TODO Prerobit pridavanie do ComboBoxu cez Observer
 			budovy.getItems().add(text);
 		});

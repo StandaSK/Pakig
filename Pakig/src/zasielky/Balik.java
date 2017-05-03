@@ -2,7 +2,7 @@ package zasielky;
 
 /**
  * Balik sluzi ako Leaf navrhnoveho vzoru Composite.
- * @author Stano
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
  *
  */
 public class Balik implements Zasielka {

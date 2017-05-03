@@ -1,8 +1,7 @@
 package controller;
 
 import zasielky.*;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.event.*;
 import javafx.scene.control.*;
 import budovy.Pobocka;
 
@@ -24,7 +23,7 @@ public class PridanieZasielkyEventHandler implements EventHandler<ActionEvent> {
 		String tz = typZasielky.getValue();
 		String cz = cielZasielky.getText();
 		double hz = Double.parseDouble(hmotnostZasielky.getText());
-		
+
 		switch (tz) {
 		case "Balík" :
 			this.pobocka.pridajZasielku(new Balik(hz, cz));

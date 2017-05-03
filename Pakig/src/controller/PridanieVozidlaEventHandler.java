@@ -19,7 +19,8 @@ public class PridanieVozidlaEventHandler implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent arg0) {
 		String typ = typVozidla.getValue();
-		
+
+		// Vozidlu nebol zadaný názov
 		if (nazovVozidla.equals("")) {
 			switch (typ) {
 			case "Bicykel" :
@@ -36,6 +37,7 @@ public class PridanieVozidlaEventHandler implements EventHandler<ActionEvent> {
 				break;
 			}
 		}
+		// Vozidlo má zadaný názov
 		else {
 			switch (typ) {
 			case "Bicykel" :

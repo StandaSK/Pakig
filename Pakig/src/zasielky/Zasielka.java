@@ -1,7 +1,7 @@
 package zasielky;
 
 /**
- * Rozhranie Dorucitelny sluzi ako Component
+ * Rozhranie Zasielka sluzi ako Component
  * navrhnoveho vzoru Composite.
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>
  *

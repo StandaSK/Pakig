@@ -69,9 +69,6 @@ public class Login extends Application {
         pwBox.setPromptText("Zadajte heslo");
         grid.add(pwBox, 1, 2);
 
-        // Pomocne zobrazenie GridPane
-        //grid.setGridLinesVisible(true);
-
         Button btn = new Button("Prihl·siù");
         HBox hbBtn = new HBox(10);
 
