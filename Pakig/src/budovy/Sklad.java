@@ -20,9 +20,10 @@ public class Sklad implements Budova {
 		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));
 	}
 
-	@Override
-	public void odovzdajZasielky(Vozidlo vozidlo) {
-		//vozidlo.pridajZasielky(zasielky);
+	public void odovzdajZasielky(Vozidlo vozidlo, String ciel) {
+		ArrayList<Zasielka> vybraneZasielky = this.triedZasielky(ciel);
+		vozidlo.setZasielky(vybraneZasielky);
+		this.zasielky.removeAll(vybraneZasielky);
 	}
 
 	@Override

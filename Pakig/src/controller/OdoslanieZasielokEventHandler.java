@@ -19,10 +19,10 @@ public class OdoslanieZasielokEventHandler implements EventHandler<ActionEvent> 
 	@Override
 	public void handle(ActionEvent arg0) {
 		Vozidlo vybraneVozidlo = sklad.getVozidlo(vyberVozidla.getValue());
-		Pobocka vybranaPobocka = ZoznamBudov.najdiPobocku(vyberPobocky.getText());
+		String nazovVybranejPobocky = vyberPobocky.getText();
+		Pobocka vybranaPobocka = ZoznamBudov.najdiPobocku(nazovVybranejPobocky);
 
-		//TODO Odobraù danÈ z·sielky z danÈho skladu
-		vybraneVozidlo.setZasielky(sklad.triedZasielky(vyberPobocky.getText()));
+		sklad.odovzdajZasielky(vybraneVozidlo, nazovVybranejPobocky);
 		vybraneVozidlo.odovzdajZasielky(vybranaPobocka);
 		sklad.prijmiZasielky(vybraneVozidlo.getZasielky());
 	}

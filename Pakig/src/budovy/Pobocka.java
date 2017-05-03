@@ -1,7 +1,6 @@
 package budovy;
 
 import java.util.*;
-
 import vozidla.Vozidlo;
 import zasielky.Zasielka;
 
@@ -21,11 +20,9 @@ public class Pobocka implements Budova {
 		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));
 	}
 
-	@Override
+	//TODO Prerobi nech predáva a odoberá len zásielky neurèené pre danú poboèku
 	public void odovzdajZasielky(Vozidlo vozidlo) {
 		vozidlo.pridajZasielky(this.zasielky);
-
-		//TODO Prerobi nech odoberá len zásielky neurèené pre danú poboèku
 		this.zasielky.clear();
 	}
 	
