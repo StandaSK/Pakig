@@ -20,12 +20,20 @@ public class Pobocka implements Budova {
 		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));
 	}
 
-	//TODO Prerobi nech predáva a odoberá len zásielky neurèené pre danú poboèku
+	/**
+	 * Odovzda zasielky danemu vozidlu
+	 * @param vozidlo Vozidlo, ktoremu budu zasielky odovzdane
+	 */
 	public void odovzdajZasielky(Vozidlo vozidlo) {
+		//TODO Prerobi nech predáva a odoberá len zásielky neurèené pre danú poboèku
 		vozidlo.pridajZasielky(this.zasielky);
 		this.zasielky.clear();
 	}
 	
+	/**
+	 * Prida pobocke zasielku
+	 * @param zasielka Pridavana zasielka
+	 */
 	public void pridajZasielku(Zasielka zasielka) {
 		this.zasielky.add(zasielka);
 	}

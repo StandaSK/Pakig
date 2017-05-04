@@ -20,6 +20,11 @@ public class Sklad implements Budova {
 		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));
 	}
 
+	/**
+	 * Odovzda danemu vozidlu zasielky s danym cielom
+	 * @param vozidlo Vozidlo, ktoremu budu zasielky odovzdane
+	 * @param ciel Ciel zasielok
+	 */
 	public void odovzdajZasielky(Vozidlo vozidlo, String ciel) {
 		ArrayList<Zasielka> vybraneZasielky = this.triedZasielky(ciel);
 		vozidlo.setZasielky(vybraneZasielky);
@@ -31,6 +36,11 @@ public class Sklad implements Budova {
 		return this.zasielky;
 	}
 
+	/**
+	 * Triedi zasielky z daneho skladu podla ich ciela
+	 * @param ciel Ciel zasielok
+	 * @return ArrayList zasielok s danym cielom
+	 */
 	public ArrayList<Zasielka> triedZasielky(String ciel) {
 		ArrayList<Zasielka> triedeneZasielky = new ArrayList<Zasielka>();
 
