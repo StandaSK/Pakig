@@ -1,15 +1,18 @@
 package controller;
 
 import java.util.*;
+
 import view.*;
 import javafx.event.*;
 import javafx.scene.control.*;
 
-
 public class LoginEventHandler implements EventHandler<ActionEvent> {
+	private TextField userTextField;
+	private PasswordField passwordField;
 
-	public LoginEventHandler() {
-		
+	public LoginEventHandler(TextField userTextField, PasswordField passwordField) {
+		this.userTextField = userTextField;
+		this.passwordField = passwordField;
 	}
 
 	@Override
@@ -18,6 +21,9 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
     	List<String> choices = new ArrayList<>();
     	choices.add("PoboËka");
     	choices.add("Sklad");
+
+    	//TODO DokonËiù systÈm prihlasovania
+    	System.out.println("Meno: " + userTextField.getText() + "\nHeslo: " + passwordField.getText());
 
     	ChoiceDialog<String> dialog = new ChoiceDialog<>("PoboËka", choices);
     	dialog.setTitle("V˝ber typu pracoviska - Pakig");

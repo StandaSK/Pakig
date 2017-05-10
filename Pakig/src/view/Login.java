@@ -65,9 +65,9 @@ public class Login extends Application {
         Label pw = new Label("Heslo:");
         grid.add(pw, 0, 2);
 
-        PasswordField pwBox = new PasswordField();
-        pwBox.setPromptText("Zadajte heslo");
-        grid.add(pwBox, 1, 2);
+        PasswordField passwordField = new PasswordField();
+        passwordField.setPromptText("Zadajte heslo");
+        grid.add(passwordField, 1, 2);
 
         Button btn = new Button("Prihl·siù");
         HBox hbBtn = new HBox(10);
@@ -76,7 +76,7 @@ public class Login extends Application {
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
 
-        btn.setOnAction(new LoginEventHandler());
+        btn.setOnAction(new LoginEventHandler(userTextField, passwordField));
 
         Scene scene = new Scene(grid, 300, 250);
         primaryStage.setScene(scene);
