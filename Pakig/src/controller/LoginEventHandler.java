@@ -1,7 +1,6 @@
 package controller;
 
 import java.util.*;
-
 import view.*;
 import javafx.event.*;
 import javafx.scene.control.*;
