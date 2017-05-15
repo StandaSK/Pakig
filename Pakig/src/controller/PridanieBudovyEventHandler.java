@@ -50,7 +50,6 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 				throw new IllegalStateException("Neexistujúci typ budovy!");
 			}
 
-			// TODO Prerobit pridavanie do ComboBoxu cez Observer
 			budovy.getItems().add(text);
 		});
 	}

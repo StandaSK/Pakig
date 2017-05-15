@@ -25,11 +25,25 @@ public class Pobocka implements Budova {
 	 * @param vozidlo Vozidlo, ktoremu budu zasielky odovzdane
 	 */
 	public void odovzdajZasielky(Vozidlo vozidlo) {
-		//TODO Prerobiù nech pred·va a odober· len z·sielky neurËenÈ pre dan˙ poboËku
-		vozidlo.pridajZasielky(this.zasielky);
-		this.zasielky.clear();
+		ArrayList<Zasielka> vybraneZasielky = this.triedZasielky();
+		vozidlo.pridajZasielky(vybraneZasielky);
+		this.zasielky.removeAll(vybraneZasielky);
 	}
-	
+
+	/**
+	 * Vytriedi zasielky, ktore nemaju ciel v danej pobocke
+	 * @return ArrayList zasielok, nepatriacich do danej pobocky
+	 */
+	public ArrayList<Zasielka> triedZasielky() {
+		ArrayList<Zasielka> triedeneZasielky = new ArrayList<Zasielka>();
+
+		for (Zasielka z : this.zasielky) {
+			if (!z.zistiCiel().equals(this.nazov))
+				triedeneZasielky.add(z);
+		}
+		return triedeneZasielky;
+	}
+
 	/**
 	 * Prida pobocke zasielku
 	 * @param zasielka Pridavana zasielka

@@ -21,7 +21,6 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
     	choices.add("PoboËka");
     	choices.add("Sklad");
 
-    	//TODO DokonËiù systÈm prihlasovania
     	System.out.println("Meno: " + userTextField.getText() + "\nHeslo: " + passwordField.getText());
 
     	ChoiceDialog<String> dialog = new ChoiceDialog<>("PoboËka", choices);
