@@ -56,13 +56,6 @@ public class Sklad implements Budova {
 		this.vozidla.add(vozidlo);
 	}
 
-	/*
-	@Override
-	public void odoberVozidlo(Vozidlo vozidlo) {
-		this.vozidla.remove(vozidlo);
-	}
-	*/
-
 	@Override
 	public ArrayList<Vozidlo> getVozidla() {
 		return this.vozidla;
