@@ -1,7 +1,7 @@
 package view;
 
 import controller.OdoslanieZasielokEventHandler;
-import budovy.Sklad;
+import budovy.*;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -22,8 +22,9 @@ public class OdoslanieZasielokView extends Stage {
         Label vyberPobockyLabel = new Label("Vyber poboèku");
         grid.add(vyberPobockyLabel, 0, 0);
 
-        TextField vyberPobocky = new TextField();
-        vyberPobocky.setPromptText("Zadaj názov poboèky");
+        ComboBox<String> vyberPobocky = new ComboBox<String>();
+        vyberPobocky.setValue("-- Vyberte --");
+        ZoznamBudov.getPobocky().forEach(pobocka -> vyberPobocky.getItems().add(pobocka.getNazov()));
         grid.add(vyberPobocky, 1, 0);
 
         Label vyberVozidlaLabel = new Label("Vyber vozidlo");
