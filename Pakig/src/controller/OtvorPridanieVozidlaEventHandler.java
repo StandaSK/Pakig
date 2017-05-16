@@ -4,6 +4,11 @@ import view.PridanieVozidlaView;
 import budovy.Budova;
 import javafx.event.*;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class OtvorPridanieVozidlaEventHandler implements EventHandler<ActionEvent> {
 	private Budova budova;
 

@@ -9,6 +9,11 @@ import javafx.scene.layout.*;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class PridanieVozidlaView extends Stage {
 
 	public PridanieVozidlaView(Budova budova) {

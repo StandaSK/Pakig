@@ -2,6 +2,11 @@ package budovy;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public final class ZoznamBudov {
 	private static ArrayList<Pobocka> pobocky = new ArrayList<Pobocka>();
 	private static ArrayList<Sklad> sklady = new ArrayList<Sklad>();

@@ -5,6 +5,11 @@ import view.*;
 import javafx.event.*;
 import javafx.scene.control.ComboBox;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class VyberBudovyEventHandler implements EventHandler<ActionEvent> {
 	private ComboBox<String> budovy;
 	private int typ;

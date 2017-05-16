@@ -8,6 +8,11 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class PobockaView extends Stage {
 
 	public PobockaView(Pobocka pobocka) {

@@ -4,6 +4,11 @@ import budovy.Budova;
 import javafx.event.*;
 import javafx.scene.control.TextArea;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class VypisVozidielEventHandler implements EventHandler<ActionEvent> {
 	private Budova budova;
 	private TextArea vozidlaVypis;

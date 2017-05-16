@@ -4,6 +4,11 @@ import java.util.*;
 import vozidla.Vozidlo;
 import zasielky.Zasielka;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class Pobocka implements Budova {
 	private String nazov;
 	private ArrayList<Vozidlo> vozidla;
@@ -30,7 +35,7 @@ public class Pobocka implements Budova {
 	 */
 	public void odovzdajZasielky(Vozidlo vozidlo) {
 		ArrayList<Zasielka> vybraneZasielky = this.triedZasielky();
-		vozidlo.pridajZasielky(vybraneZasielky);
+		vybraneZasielky.removeAll(vozidlo.pridajZasielky(vybraneZasielky));
 		this.zasielky.removeAll(vybraneZasielky);
 	}
 

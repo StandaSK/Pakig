@@ -1,9 +1,15 @@
 package budovy;
 
 import java.util.*;
+
 import vozidla.Vozidlo;
 import zasielky.Zasielka;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class Sklad implements Budova {
 	private String nazov;
 	private ArrayList<Vozidlo> vozidla;
@@ -31,7 +37,7 @@ public class Sklad implements Budova {
 	 */
 	public void odovzdajZasielky(Vozidlo vozidlo, String ciel) {
 		ArrayList<Zasielka> vybraneZasielky = this.triedZasielky(ciel);
-		vozidlo.pridajZasielky(vybraneZasielky);
+		vybraneZasielky.removeAll(vozidlo.pridajZasielky(vybraneZasielky));
 		this.zasielky.removeAll(vybraneZasielky);
 	}
 

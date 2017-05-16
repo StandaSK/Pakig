@@ -4,6 +4,11 @@ import view.OdoslanieZasielokView;
 import budovy.Sklad;
 import javafx.event.*;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class OtvorOdoslanieZasielokEventHandler implements EventHandler<ActionEvent> {
 	private Sklad sklad;
 

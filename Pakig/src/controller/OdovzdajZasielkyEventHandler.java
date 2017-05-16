@@ -5,6 +5,11 @@ import zasielky.Zasielka;
 import budovy.Pobocka;
 import javafx.event.*;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class OdovzdajZasielkyEventHandler implements EventHandler<ActionEvent> {
 	Pobocka pobocka;
 

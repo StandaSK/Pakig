@@ -4,6 +4,11 @@ import view.PridanieZasielkyView;
 import budovy.Pobocka;
 import javafx.event.*;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class OtvorPridanieZasielkyEventHandler implements EventHandler<ActionEvent> {
 	private Pobocka pobocka;
 

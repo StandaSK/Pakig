@@ -6,7 +6,7 @@ package vozidla;
  * Ma vysoku kapacitu, nizku rychlost ale aj nizku
  * cenu prepravy.
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>
- *
+ * 
  */
 public class Kamion extends Vozidlo {
 

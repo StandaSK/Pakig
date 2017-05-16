@@ -6,9 +6,14 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
-import budovy.Pobocka;
+import budovy.*;
 import controller.PridanieZasielkyEventHandler;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class PridanieZasielkyView extends Stage {
 
 	public PridanieZasielkyView(Pobocka pobocka) {
@@ -35,8 +40,9 @@ public class PridanieZasielkyView extends Stage {
         Label cielZasielkyLabel = new Label("Cieæ z·sielky");
         grid.add(cielZasielkyLabel, 0, 2);
 
-        TextField cielZasielky = new TextField();
-        cielZasielky.setPromptText("Zadajte cieæ z·sielky");
+        ComboBox<String> cielZasielky = new ComboBox<String>();
+        cielZasielky.setValue("-- Vyberte --");
+        ZoznamBudov.getPobocky().forEach(p -> cielZasielky.getItems().add(p.getNazov()));
         grid.add(cielZasielky, 1, 2);
 
         Label hmotnostZasielkyLabel = new Label("Hmotnosù (kg)");

@@ -5,6 +5,11 @@ import view.*;
 import javafx.event.*;
 import javafx.scene.control.*;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class LoginEventHandler implements EventHandler<ActionEvent> {
 	private TextField userTextField;
 	private PasswordField passwordField;

@@ -4,7 +4,7 @@ package vozidla;
  * Osobne auto ma vysoku rychlost prepravy, no
  * nizku kapacitu a vysoku cenu prepravy.
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>
- *
+ * 
  */
 public class OsobneAuto extends Vozidlo {
 

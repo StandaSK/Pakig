@@ -5,6 +5,11 @@ import budovy.ZoznamBudov;
 import javafx.event.*;
 import javafx.scene.control.*;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 	private ComboBox<String> budovy;
 	private int typ;

@@ -1,11 +1,14 @@
 package vozidla;
 
+import java.util.ArrayList;
+import java.util.List;
+import zasielky.Zasielka;
+
 /**
- * Bicykel ma minimalnu kapacitu, nizku rychlost a
- * nizku cenu prepravy. Vyuziva sa len na dorucovanie
- * listov z pobociek priamo adresatom.
+ * Bicykel sa vyuziva len na prepravu listov.
+ * Ma minimalnu kapacitu, nizku rychlost a nizku cenu prepravy.
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>
- *
+ * 
  */
 public class Bicykel extends Vozidlo {
 
@@ -15,6 +18,27 @@ public class Bicykel extends Vozidlo {
 
 	public Bicykel(String nazov) {
 		super(nazov, 5, 10 ,10);
+	}
+
+	/**
+	 * Prida bicyklu <b>Listove zasielky</b>, odmietne ostatne typy
+	 * @param zasielky Zasielky, ktore dostane vozidlo
+	 * @return List odmietnutych zasielok
+	 */
+	@Override
+	public List<Zasielka> pridajZasielky(List<Zasielka> zasielky) {
+		ArrayList<Zasielka> odmietnuteZasielky = new ArrayList<Zasielka>();
+
+		zasielky.forEach(zasielka -> {
+			if (zasielka instanceof zasielky.List) {
+				this.getZasielky().add(zasielka);
+			}
+			else {
+				odmietnuteZasielky.add(zasielka);
+			}
+		});
+
+		return odmietnuteZasielky;
 	}
 
 }

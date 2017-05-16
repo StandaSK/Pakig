@@ -5,6 +5,11 @@ import budovy.*;
 import javafx.event.*;
 import javafx.scene.control.*;
 
+/**
+ * 
+ * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ *
+ */
 public class OdoslanieZasielokEventHandler implements EventHandler<ActionEvent> {
 	private Sklad sklad;
 	private ComboBox<String> vyberPobocky;

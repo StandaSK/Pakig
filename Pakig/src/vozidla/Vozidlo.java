@@ -8,6 +8,7 @@ import zasielky.Zasielka;
  * Abstraktna trieda Vozidlo sa vyuziva ako
  * spolocny nadtyp vsetkych vozidiel.
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * 
  */
 public abstract class Vozidlo {
 	private String nazov;
@@ -27,9 +28,11 @@ public abstract class Vozidlo {
 	/**
 	 * Prida vozidlu <b>zasielky</b>
 	 * @param zasielky Zasielky, ktore dostane vozidlo
+	 * @return List odmietnutych zasielok
 	 */
-	public void pridajZasielky(List<Zasielka> zasielky) {
+	public List<Zasielka> pridajZasielky(List<Zasielka> zasielky) {
 		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));
+		return null;
 	}
 
 	/**
