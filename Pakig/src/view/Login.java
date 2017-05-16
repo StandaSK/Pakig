@@ -36,6 +36,7 @@ public class Login extends Application {
 			ZoznamBudov.najdiPobocku("Košice").pridajVozidlo(new Dodavka("Dodávka KE-445GD"));
 			ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-123AB"));
 			ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-789XY"));
+			ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Bicykel());
 			
 			ArrayList<Zasielka> demoZasielky = new ArrayList<Zasielka>();
 			demoZasielky.add(new Balik(0.4, "Bratislava"));

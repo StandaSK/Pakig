@@ -26,7 +26,7 @@ public class PridanieVozidlaEventHandler implements EventHandler<ActionEvent> {
 		String typ = typVozidla.getValue();
 
 		// Vozidlu nebol zadaný názov
-		if (nazovVozidla.equals("")) {
+		if (nazovVozidla.getText().equals("")) {
 			switch (typ) {
 			case "Bicykel" :
 				budova.pridajVozidlo(new Bicykel());

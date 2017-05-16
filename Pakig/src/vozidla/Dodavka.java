@@ -9,7 +9,7 @@ package vozidla;
 public class Dodavka extends Vozidlo {
 
 	public Dodavka() {
-		super("Dodavka", 50, 50, 50);
+		super("Dodávka", 50, 50, 50);
 	}
 
 	public Dodavka(String nazov) {

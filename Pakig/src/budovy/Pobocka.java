@@ -76,6 +76,11 @@ public class Pobocka implements Budova {
 		return this.vozidla;
 	}
 
+	/**
+	 * Funkcia vrati hladane vozidlo patriace danej pobocke
+	 * @param nazov Nazov hladaneho vozidla
+	 * @return Hladane vozidlo
+	 */
 	@Override
 	public Vozidlo getVozidlo(String nazov) {
 		for (Vozidlo v : this.vozidla) {

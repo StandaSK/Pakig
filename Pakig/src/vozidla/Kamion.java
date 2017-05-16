@@ -11,7 +11,7 @@ package vozidla;
 public class Kamion extends Vozidlo {
 
 	public Kamion() {
-		super("Kamion", 100, 10, 10);
+		super("Kamión", 100, 10, 10);
 	}
 
 	public Kamion(String nazov) {

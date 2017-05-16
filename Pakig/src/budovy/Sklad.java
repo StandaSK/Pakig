@@ -1,7 +1,6 @@
 package budovy;
 
 import java.util.*;
-
 import vozidla.Vozidlo;
 import zasielky.Zasielka;
 
@@ -71,6 +70,11 @@ public class Sklad implements Budova {
 		return this.vozidla;
 	}
 
+	/**
+	 * Funkcia vrati hladane vozidlo patriace danemu skladu
+	 * @param nazov Nazov hladaneho vozidla
+	 * @return Hladane vozidlo
+	 */
 	@Override
 	public Vozidlo getVozidlo(String nazov) {
 		for (Vozidlo v : this.vozidla) {

@@ -3,7 +3,8 @@ package budovy;
 import java.util.ArrayList;
 
 /**
- * 
+ * "Staticka" trieda ZoznamBudov sluzi na uchovavanie referencii
+ * na vsetky budovy (pobocky a sklady).
  * @author Stanislav Jakubek <xjakubeks@stuba.sk>
  *
  */

@@ -11,17 +11,17 @@ import javafx.scene.control.TextArea;
  */
 public class VypisVozidielEventHandler implements EventHandler<ActionEvent> {
 	private Budova budova;
-	private TextArea vozidlaVypis;
+	private TextArea vypis;
 
-	public VypisVozidielEventHandler(Budova budova, TextArea vozidlaVypis) {
+	public VypisVozidielEventHandler(Budova budova, TextArea vypis) {
 		this.budova = budova;
-		this.vozidlaVypis = vozidlaVypis;
+		this.vypis = vypis;
 	}
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		vozidlaVypis.clear();
-		budova.getVozidla().forEach(vozidlo -> vozidlaVypis.appendText(vozidlo.getNazov() + "\n"));
+		vypis.clear();
+		budova.getVozidla().forEach(vozidlo -> vypis.appendText(vozidlo.getNazov() + "\n"));
 	}
 
 }

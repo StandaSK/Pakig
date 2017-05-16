@@ -9,7 +9,7 @@ package vozidla;
 public class OsobneAuto extends Vozidlo {
 
 	public OsobneAuto() {
-		super("Osobne auto", 10, 100, 100);
+		super("Osobné auto", 10, 100, 100);
 	}
 
 	public OsobneAuto(String nazov) {

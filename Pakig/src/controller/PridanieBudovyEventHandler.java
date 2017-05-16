@@ -16,7 +16,7 @@ public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {
 	
 	/**
 	 * Konštruktor pre EventHandler starajúci sa o pridanie novej budovy
-	 * @param budovy Aktualizuje sa pri tvorbe novej budoyy
+	 * @param budovy Aktualizuje sa pri tvorbe novej budovy
 	 * @param typ 0 pre vytvorenie poboèky, 1 pre vytvorenie skladu
 	 */
 	public PridanieBudovyEventHandler(ComboBox<String> budovy, int typ) {

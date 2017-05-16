@@ -34,6 +34,9 @@ public class List implements Zasielka {
 		return hmotnost;
 	}
 
+	/**
+	 * @return Nazov triedy - String "List"
+	 */
 	@Override
 	public String getNazovTriedy() {
 		return "List";
