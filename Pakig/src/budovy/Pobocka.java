@@ -15,6 +15,10 @@ public class Pobocka implements Budova {
 		this.zasielky = new ArrayList<Zasielka>();
 	}
 
+	/**
+	 * Prijme dorucovane <b>zasielky</b>, prida ich do zoznamu zasiliek danej pobocky
+	 * @param zasielky List zasiliek, ktore sa dorucuju na pobocku
+	 */
 	@Override
 	public void prijmiZasielky(List<Zasielka> zasielky) {
 		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));

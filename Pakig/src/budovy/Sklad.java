@@ -15,6 +15,10 @@ public class Sklad implements Budova {
 		this.zasielky = new ArrayList<Zasielka>();
 	}
 
+	/**
+	 * Prijme dorucovane <b>zasielky</b>, prida ich do zoznamu zasiliek daneho skladu
+	 * @param zasielky List zasiliek, ktore sa dorucuju do skladu
+	 */
 	@Override
 	public void prijmiZasielky(List<Zasielka> zasielky) {
 		zasielky.forEach(zasielka -> this.zasielky.add(zasielka));
@@ -27,7 +31,7 @@ public class Sklad implements Budova {
 	 */
 	public void odovzdajZasielky(Vozidlo vozidlo, String ciel) {
 		ArrayList<Zasielka> vybraneZasielky = this.triedZasielky(ciel);
-		vozidlo.setZasielky(vybraneZasielky);
+		vozidlo.pridajZasielky(vybraneZasielky);
 		this.zasielky.removeAll(vybraneZasielky);
 	}
 

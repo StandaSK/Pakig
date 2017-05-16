@@ -18,10 +18,4 @@ public class Kamion extends Vozidlo {
 		super(nazov, 100, 10, 10);
 	}
 
-	/*
-	public Kamion(int kapacita, int rychlost, int cenaPrepravy) {
-		super(kapacita, rychlost, cenaPrepravy);
-	}
-	*/
-
 }

@@ -16,10 +16,4 @@ public class Dodavka extends Vozidlo {
 		super(nazov, 50, 50, 50);
 	}
 
-	/*
-	public Dodavka(int kapacita, int rychlost, int cenaPrepravy) {
-		super(kapacita, rychlost, cenaPrepravy);
-	}
-	*/
-
 }

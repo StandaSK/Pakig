@@ -25,7 +25,7 @@ public abstract class Vozidlo {
 	}
 
 	/**
-	 * Prida vozidlu zasielky 
+	 * Prida vozidlu <b>zasielky</b>
 	 * @param zasielky Zasielky, ktore dostane vozidlo
 	 */
 	public void pridajZasielky(List<Zasielka> zasielky) {

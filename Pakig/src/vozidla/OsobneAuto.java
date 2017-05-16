@@ -16,10 +16,4 @@ public class OsobneAuto extends Vozidlo {
 		super(nazov, 10, 100, 100);
 	}
 
-	/*
-	public OsobneAuto(int kapacita, int rychlost, int cenaPrepravy) {
-		super(kapacita, rychlost, cenaPrepravy);
-	}
-	*/
-
 }
