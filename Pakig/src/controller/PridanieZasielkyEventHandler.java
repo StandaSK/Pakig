@@ -1,5 +1,6 @@
 package controller;
 
+import view.ExceptionDialog;
 import zasielky.*;
 import javafx.event.*;
 import javafx.scene.control.*;
@@ -7,7 +8,7 @@ import budovy.Pobocka;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class PridanieZasielkyEventHandler implements EventHandler<ActionEvent> {
@@ -27,15 +28,20 @@ public class PridanieZasielkyEventHandler implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent arg0) {
 		String tz = typZasielky.getValue();
 		String cz = cielZasielky.getValue();
-		double hz = Double.parseDouble(hmotnostZasielky.getText());
 
-		switch (tz) {
-		case "Balík" :
-			this.pobocka.pridajZasielku(new Balik(hz, cz));
-			break;
-		case "List" :
-			this.pobocka.pridajZasielku(new List(hz, cz));
-			break;
+		try {
+			double hz = Double.parseDouble(hmotnostZasielky.getText());
+
+			switch (tz) {
+			case "Balík" :
+				this.pobocka.pridajZasielku(new Balik(hz, cz));
+				break;
+			case "List" :
+				this.pobocka.pridajZasielku(new List(hz, cz));
+				break;
+			}
+		} catch (NumberFormatException e){
+			new ExceptionDialog(e);
 		}
 	}
 

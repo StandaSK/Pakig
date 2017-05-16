@@ -7,7 +7,7 @@ import javafx.scene.control.*;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class PridanieBudovyEventHandler implements EventHandler<ActionEvent> {

@@ -1,12 +1,14 @@
 package budovy;
 
 import java.util.*;
+
+import controller.NeexistujuceVozidloException;
 import vozidla.Vozidlo;
 import zasielky.Zasielka;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class Sklad implements Budova {
@@ -74,14 +76,15 @@ public class Sklad implements Budova {
 	 * Funkcia vrati hladane vozidlo patriace danemu skladu
 	 * @param nazov Nazov hladaneho vozidla
 	 * @return Hladane vozidlo
+	 * @throws NeexistujuceVozidloException ak vozidlo s danym nazvom neexistuje
 	 */
 	@Override
-	public Vozidlo getVozidlo(String nazov) {
+	public Vozidlo getVozidlo(String nazov) throws NeexistujuceVozidloException {
 		for (Vozidlo v : this.vozidla) {
 			if (v.getNazov().equals(nazov))
 				return v;
 		}
-		return null;
+		throw new NeexistujuceVozidloException("Vozidlo s daným názvom neexistuje!");
 	}
 
 	@Override

@@ -5,7 +5,7 @@ package vozidla;
  * pobockami a skladmi, nedorucuje postu adresatom.
  * Ma vysoku kapacitu, nizku rychlost ale aj nizku
  * cenu prepravy.
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  * 
  */
 public class Kamion extends Vozidlo {

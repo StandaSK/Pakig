@@ -7,7 +7,7 @@ import javafx.event.*;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class OdovzdajZasielkyEventHandler implements EventHandler<ActionEvent> {

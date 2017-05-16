@@ -6,7 +6,7 @@ import javafx.event.*;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class OtvorPridanieVozidlaEventHandler implements EventHandler<ActionEvent> {

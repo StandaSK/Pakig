@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * BalikZasiliek sluzi ako Composite navrhnoveho vzoru Composite.
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class BalikZasiliek implements Zasielka {

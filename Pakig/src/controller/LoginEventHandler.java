@@ -1,13 +1,14 @@
 package controller;
 
 import java.util.*;
+
 import view.*;
 import javafx.event.*;
 import javafx.scene.control.*;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class LoginEventHandler implements EventHandler<ActionEvent> {
@@ -44,7 +45,7 @@ public class LoginEventHandler implements EventHandler<ActionEvent> {
     			new VyberSkladuView();
     			break;
     		default :
-    			throw new IllegalStateException("Neznámy typ pracoviska!");
+    			new ExceptionDialog(new IllegalStateException("Neznámy typ pracoviska!"));
     		}
     	});
 	}

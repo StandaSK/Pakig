@@ -7,7 +7,7 @@ import javafx.scene.control.ComboBox;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class VyberBudovyEventHandler implements EventHandler<ActionEvent> {
@@ -29,15 +29,25 @@ public class VyberBudovyEventHandler implements EventHandler<ActionEvent> {
 
 		switch (typ) {
 		case 0 :
-			Pobocka vybranaPobocka = ZoznamBudov.najdiPobocku(budovy.getValue());
-			new PobockaView(vybranaPobocka);
+			Pobocka vybranaPobocka;
+			try {
+				vybranaPobocka = ZoznamBudov.najdiPobocku(budovy.getValue());
+				new PobockaView(vybranaPobocka);
+			} catch (NeexistujucaBudovaException e1) {
+				new ExceptionDialog(e1);
+			}
 			break;
 		case 1 :
-			Sklad vybranySklad = ZoznamBudov.najdiSklad(budovy.getValue());
-			new SkladView(vybranySklad);
+			Sklad vybranySklad;
+			try {
+				vybranySklad = ZoznamBudov.najdiSklad(budovy.getValue());
+				new SkladView(vybranySklad);
+			} catch (NeexistujucaBudovaException e) {
+				new ExceptionDialog(e);
+			}
 			break;
 		default :
-			throw new IllegalStateException("Neexistujúci typ budovy!");
+			new ExceptionDialog(new IllegalStateException("Neexistujúci typ budovy!"));
 		}
 	}
 

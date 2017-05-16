@@ -3,7 +3,7 @@ package zasielky;
 /**
  * Rozhranie Zasielka sluzi ako Component
  * navrhnoveho vzoru Composite.
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public interface Zasielka {

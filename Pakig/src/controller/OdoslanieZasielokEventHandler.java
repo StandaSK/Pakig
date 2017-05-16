@@ -1,5 +1,6 @@
 package controller;
 
+import view.ExceptionDialog;
 import vozidla.Vozidlo;
 import budovy.*;
 import javafx.event.*;
@@ -7,7 +8,7 @@ import javafx.scene.control.*;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class OdoslanieZasielokEventHandler implements EventHandler<ActionEvent> {
@@ -23,13 +24,19 @@ public class OdoslanieZasielokEventHandler implements EventHandler<ActionEvent> 
 
 	@Override
 	public void handle(ActionEvent arg0) {
-		Vozidlo vybraneVozidlo = sklad.getVozidlo(vyberVozidla.getValue());
-		String nazovVybranejPobocky = vyberPobocky.getValue();
-		Pobocka vybranaPobocka = ZoznamBudov.najdiPobocku(nazovVybranejPobocky);
-
-		sklad.odovzdajZasielky(vybraneVozidlo, nazovVybranejPobocky);
-		vybraneVozidlo.odovzdajZasielky(vybranaPobocka);
-		sklad.prijmiZasielky(vybraneVozidlo.getZasielky());
+		try {
+			Vozidlo vybraneVozidlo = sklad.getVozidlo(vyberVozidla.getValue());
+			String nazovVybranejPobocky = vyberPobocky.getValue();
+			Pobocka vybranaPobocka = ZoznamBudov.najdiPobocku(nazovVybranejPobocky);
+			sklad.odovzdajZasielky(vybraneVozidlo, nazovVybranejPobocky);
+			vybraneVozidlo.odovzdajZasielky(vybranaPobocka);
+			sklad.prijmiZasielky(vybraneVozidlo.getZasielky());
+		} catch (NeexistujucaBudovaException e) {
+			new ExceptionDialog(e);
+		}
+		catch (NeexistujuceVozidloException e1) {
+			new ExceptionDialog(e1);
+		}
 	}
 
 }

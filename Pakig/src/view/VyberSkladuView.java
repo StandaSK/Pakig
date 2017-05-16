@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class VyberSkladuView extends Stage {

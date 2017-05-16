@@ -1,13 +1,14 @@
 package controller;
 
+import view.ExceptionDialog;
 import vozidla.*;
 import javafx.event.*;
 import javafx.scene.control.*;
-import budovy.Budova;
+import budovy.*;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class PridanieVozidlaEventHandler implements EventHandler<ActionEvent> {
@@ -34,11 +35,16 @@ public class PridanieVozidlaEventHandler implements EventHandler<ActionEvent> {
 			case "Dod·vka" :
 				budova.pridajVozidlo(new Dodavka());
 				break;
-			case "KamiÛn" :
-				budova.pridajVozidlo(new Kamion());
-				break;
 			case "OsobnÈ auto" :
 				budova.pridajVozidlo(new OsobneAuto());
+				break;
+			case "KamiÛn" :
+				if (budova instanceof Pobocka) {
+					new ExceptionDialog(new NepovolenyTypVozidlaException("PoboËke nemoûno pridaù kamiÛn!"));
+				}
+				else {
+					budova.pridajVozidlo(new Kamion());
+				}
 				break;
 			}
 		}
@@ -51,11 +57,16 @@ public class PridanieVozidlaEventHandler implements EventHandler<ActionEvent> {
 			case "Dod·vka" :
 				budova.pridajVozidlo(new Dodavka(nazovVozidla.getText()));
 				break;
-			case "KamiÛn" :
-				budova.pridajVozidlo(new Kamion(nazovVozidla.getText()));
-				break;
 			case "OsobnÈ auto" :
 				budova.pridajVozidlo(new OsobneAuto(nazovVozidla.getText()));
+				break;
+			case "KamiÛn" :
+				if (budova instanceof Pobocka) {
+					new ExceptionDialog(new NepovolenyTypVozidlaException("PoboËke nemoûno pridaù kamiÛn!"));
+				}
+				else {
+					budova.pridajVozidlo(new Kamion(nazovVozidla.getText()));
+				}
 				break;
 			}
 		}

@@ -6,7 +6,7 @@ import javafx.scene.control.TextArea;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class VypisVozidielEventHandler implements EventHandler<ActionEvent> {

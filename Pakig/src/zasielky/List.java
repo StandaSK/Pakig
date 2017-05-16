@@ -2,7 +2,7 @@ package zasielky;
 
 /**
  * List sluzi ako Leaf navrhnoveho vzoru Composite.
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class List implements Zasielka {

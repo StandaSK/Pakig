@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class SkladView extends Stage {
@@ -26,6 +26,7 @@ public class SkladView extends Stage {
 
         TextArea vypis = new TextArea();
         vypis.setEditable(false);
+        vypis.setWrapText(true);
         grid.add(vypis, 1, 0, 2, 6);
 
         Button pridajVozidlo = new Button("Pridaj vozidlo");

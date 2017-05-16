@@ -3,7 +3,7 @@ package vozidla;
 /**
  * Dodavka disponuje priemernou rychlostou pri dorucovani,
  * priemernu kapacitu a priemernu cenu prepravy zasielok.
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  * 
  */
 public class Dodavka extends Vozidlo {

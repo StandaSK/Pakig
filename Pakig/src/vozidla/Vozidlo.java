@@ -7,7 +7,7 @@ import zasielky.Zasielka;
 /**
  * Abstraktna trieda Vozidlo sa vyuziva ako
  * spolocny nadtyp vsetkych vozidiel.
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  * 
  */
 public abstract class Vozidlo {

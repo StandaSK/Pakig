@@ -7,7 +7,7 @@ import zasielky.Zasielka;
 /**
  * Bicykel sa vyuziva len na prepravu listov.
  * Ma minimalnu kapacitu, nizku rychlost a nizku cenu prepravy.
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  * 
  */
 public class Bicykel extends Vozidlo {

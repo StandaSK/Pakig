@@ -4,9 +4,10 @@ package view;
 import budovy.ZoznamBudov;
 import vozidla.*;
 import zasielky.*;
-
 import controller.*;
+
 import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.geometry.*;
 import javafx.scene.*;
@@ -17,7 +18,7 @@ import javafx.stage.Stage;
 
 /**
  * 
- * @author Stanislav Jakubek <xjakubeks@stuba.sk>
+ * @author Stanislav Jakubek
  *
  */
 public class Login extends Application {
@@ -25,24 +26,31 @@ public class Login extends Application {
 
 	public static void main(String[] args) {
 		if (DEMO) {
-			// Pridanie poboèiek
+			// Pridanie pobociek
 			ZoznamBudov.pridajPobocku("Bratislava");
 			ZoznamBudov.pridajPobocku("Košice");
 			ZoznamBudov.pridajSklad("Trnava");
-			
-			// Pridanie vozidiel poboèkám
-			ZoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new Dodavka("Dodávka BA-354CK"));
-			ZoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new OsobneAuto("Os. Auto BL-617KF"));
-			ZoznamBudov.najdiPobocku("Košice").pridajVozidlo(new Dodavka("Dodávka KE-445GD"));
-			ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-123AB"));
-			ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-789XY"));
-			ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Bicykel());
-			
-			ArrayList<Zasielka> demoZasielky = new ArrayList<Zasielka>();
-			demoZasielky.add(new Balik(0.4, "Bratislava"));
-			demoZasielky.add(new List(1, "Košice"));
-			
-			ZoznamBudov.najdiSklad("Trnava").prijmiZasielky(demoZasielky);		}
+
+			// Pridanie vozidiel budovam
+			try {
+				ZoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new Dodavka("Dodávka BA-354CK"));
+				ZoznamBudov.najdiPobocku("Bratislava").pridajVozidlo(new OsobneAuto("Os. Auto BL-617KF"));
+				ZoznamBudov.najdiPobocku("Košice").pridajVozidlo(new Dodavka("Dodávka KE-445GD"));
+				ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-123AB"));
+				ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Dodavka("Dodávka TT-789XY"));
+				ZoznamBudov.najdiSklad("Trnava").pridajVozidlo(new Bicykel());
+
+				// Vytvorenie demo zasiliek
+				ArrayList<Zasielka> demoZasielky = new ArrayList<Zasielka>();
+				demoZasielky.add(new Balik(0.4, "Bratislava"));
+				demoZasielky.add(new List(1, "Košice"));
+
+				// Priradenie demo zasiliek skladu
+				ZoznamBudov.najdiSklad("Trnava").prijmiZasielky(demoZasielky);
+			} catch (NeexistujucaBudovaException e) {
+				new ExceptionDialog(e);
+			}
+		}
 		launch(args);
 	}
 
