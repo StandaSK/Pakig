@@ -21,7 +21,7 @@ public class VypisZasielokEventHandler implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent arg0) {
 		vypis.clear();
-		budova.getZasielky().forEach(zasielka -> vypis.appendText("Typ: " + zasielka.getClass().getSimpleName() + 
+		budova.getZasielky().forEach(zasielka -> vypis.appendText("Typ: " + zasielka.getNazovTriedy() + 
 				", Cieæ: " + zasielka.zistiCiel() + ", Hmotnosù: " + zasielka.zistiHmotnost() + "\n"));
 	}
 

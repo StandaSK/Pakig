@@ -53,4 +53,9 @@ public class BalikZasiliek implements Zasielka {
 	public double zistiHmotnost() {
 		return hmotnost;
 	}
+
+	@Override
+	public String getNazovTriedy() {
+		return "Balík Zásiliek";
+	}
 }

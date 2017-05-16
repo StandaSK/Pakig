@@ -34,4 +34,9 @@ public class Balik implements Zasielka {
 		return hmotnost;
 	}
 
+	@Override
+	public String getNazovTriedy() {
+		return "Balík";
+	}
+
 }

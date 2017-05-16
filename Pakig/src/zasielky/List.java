@@ -33,5 +33,10 @@ public class List implements Zasielka {
 	public double zistiHmotnost() {
 		return hmotnost;
 	}
+
+	@Override
+	public String getNazovTriedy() {
+		return "List";
+	}
 	
 }

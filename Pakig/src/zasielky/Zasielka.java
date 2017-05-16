@@ -11,4 +11,5 @@ public interface Zasielka {
 	public String zistiCiel();
 	public void nastavHmotnost(double hmotnost);
 	public double zistiHmotnost();
+	public String getNazovTriedy();
 }
